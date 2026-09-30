@@ -1,0 +1,6 @@
+Evaluation Criterion,Linear Baseline (PCA),Nonlinear Baseline (t-SNE),Proposed Framework (TDA / HGNN)
+Data Representation Paradigm,Flat 2D Euclidean Projection,Stochastic Neighborhood Graph,Intrinsic Simplicial & Hypergraph Metric Space
+Sparsity Robustness,Low (Loses variance on >90% sparse binary data),Moderate (Sensitive to initialization & perplexity),High (Topological shape preserved despite extreme sparsity)
+Higher-order Synergy Preservation,None (Collapses to linear combinations),None (Destroys higher-order loops and global distances),Captured 13 persistent loops/synergy cavities
+Geometric Invariant Metric,8.55% Explained Variance,Kullback-Leibler (KL) Divergence,"Topological Entropy H0=0.9966, H1=0.9264"
+Global Structure Separability,Continuous blur,Fragmented clusters,Identified 211 stable herbal phenotypes

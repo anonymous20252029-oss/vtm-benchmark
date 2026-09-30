@@ -1,0 +1,569 @@
+﻿ID_BaiThuoc,ID_ViThuoc,TenViThuoc,LieuLuong,Ghi_chu_che_bien
+101,1,Ích mẫu,70%,
+101,473,Xuyên khung,2%,
+101,17,Đương quy,10%,
+101,23,Bạch thược,3%,
+101,588,Thục địa,1%,
+101,285,Bắc mộc hương,1%,
+101,630,Đại táo,2%,
+101,276,Trần bì,1%,
+101,2,Hương phụ,5%,tứ chế
+101,315,Ô dược,2%,
+102,2,Hương phụ,1g,
+102,3,Ngải cứu,1g,
+102,1,Ích mẫu,1g,
+102,4,Lá bạch đồng nữ,1g,
+103,3,Lá ngải cứu,16g,khô
+103,469,Tía tô,16g,
+104,4,Rễ bạch đồng nữ,10g,Sắc với 400ml nước còn 200ml
+105,5,Cây diếp cá,20g,khô
+105,630,Táo đỏ,10 quả,
+106,9,Bán hạ,8g,
+106,153,Phục linh,6g,
+106,265,Sinh khương,3g,
+107,9,Bán hạ,40g,chế
+107,265,Sinh khương,20g,
+108,10,Vỏ rễ cây bông,3g,
+109,11,Hạt bông,5g,sao vàng
+109,606,Cam thảo,2g,
+110,13,Tô mộc,10g,
+110,28,Huyền hồ sách,6g,
+110,258,Sơn tra,10g,
+110,601,Hồng hoa,3g,
+110,681,Ngũ linh chi,8g,
+110,17,Đương quy thân,10g,
+111,13,Tô mộc,12g,
+112,17,Đương quy,12g,
+112,588,Thục địa,12g,
+112,23,Bạch thược,8g,
+112,473,Xuyên khung,6g,
+113,17,Đương quy,7g,
+113,602,Quế chi,6g,
+113,265,Sinh khương,6g,
+113,630,Đại táo,6g,
+113,23,Thược dược,10g,
+113,-1,Đường phèn,50g,
+114,21,Đại kế (Ô rô),20g,
+114,212,Bồ hoàng,8g,
+114,433,Táo đen,10 quả,
+115,23,Bạch thược,8g,
+115,606,Cam thảo,4g,
+116,602,Quế chi,6g,
+116,23,Bạch thược,6g,
+116,630,Đại táo,6g,
+116,265,Sinh khương,6g,
+116,153,Phục linh,6g,
+116,280,Bạch truật,6g,
+116,606,Cam thảo,4g,
+117,24,Xích thược,6-8g,Tán nhỏ
+118,24,Xích thược,(bằng nhau),Tán nhỏ
+118,2,Hương phụ,(bằng nhau),Tán nhỏ
+119,28,Duyên hồ sách,4.0g,
+119,17,Đương quy,3.0g,
+119,602,Quế chỉ,3.0g,
+119,265,Can khương,2.5g,
+120,29,Bồ công anh Việt Nam,20-40g,"Tươi, giã nát, thêm ít muối"
+121,29,Bồ công anh Việt Nam,20g,Khô
+121,349,Lá khôi,15g,
+121,114,Lá khổ sâm,10g,
+122,32,Kim ngân,6g (hoa) hoặc 12g (lá),
+122,-1,Đường,Vừa đủ ngọt (khoảng 4g),
+123,32,Kim ngân hoa,40g,Tán bột
+123,54,Liên kiều,40g,Tán bột
+123,449,Kinh giới tuệ,16g,Tán bột
+123,520,Cát cánh,24g,Tán bột
+123,495,Đạm đậu sị,20g,Tán bột
+123,441,Bạc hà,24g,Tán bột
+123,457,Ngưu bàng tử,24g,Tán bột
+123,447,Đạm trúc diệp,16g,Tán bột
+124,38,Con Rết,(Không rõ lượng),"Ngô công, bồ hoàng, chấn, sấy khô, tán nhỏ, hòa ít long não, thêm ít nước hay rượu bôi lên."
+125,38,Con Rết,4-6 con,"Sấy khô, bỏ đầu chân, tán nhỏ, trộn với lượng tương đương bột cam thảo và thêm nước hồ làm thành viên."
+126,196,Mã tiên thảo,(Không rõ lượng),"Tươi giã lấy nước uống, bã đắp lên mụn nhọt."
+127,47,Cào bản,6g,
+127,473,Xuyên khung,3g,
+127,482,Phòng phong,5g,
+127,442,Bạch chỉ,3g,
+127,425,Tế tân,2g,
+127,606,Cam thảo,3g,
+128,54,Liên kiều,6g,
+128,32,Kim ngân hoa,4g,
+128,531,Gai bồ kết,3g,
+129,54,Liên kiều,8g,
+129,34,Hạ khô thảo,6g,
+129,630,Táo,5g,
+129,606,Cam thảo,3g,
+135,161,phèn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+144,672,người,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+148,437,thông thiên,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+148,286,hạt đay,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+148,96,một loại vạn niên thanh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+149,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+160,671,tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+168,331,đại hoàng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+175,304,thống,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+176,637,vú,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+179,157,uất,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+182,2,Cao hương ngải: Hương phụ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+182,3,ngải cứu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+183,490,bụng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+186,2,Hương phụ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+186,143,ngải,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+193,3,chảy máu): Lá ngải cứu lóg,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+193,469,tía tô,16g,Bóc tách từ sách Đỗ Tất Lợi
+204,155,thông,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+215,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+216,265,bột gừng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+217,153,phục linh óg,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+219,9,Bán hạ chế,40g,Bóc tách từ sách Đỗ Tất Lợi
+220,10,Vỏ rễ cây bông,3g,Bóc tách từ sách Đỗ Tất Lợi
+224,638,cao,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+237,588,thục địa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+238,55,máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+239,82,quế,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+240,17,ng: Đương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+244,214,huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+245,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+246,214,huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+255,23,Thược được cam thảo thang: Thược dược,8g,Bóc tách từ sách Đỗ Tất Lợi
+258,24,Xích thược,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+258,285,hương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+263,31,BỔ CÔNG ANH,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+268,268,ng kém tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+269,31,Lá bỗ công anh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+270,168,đậu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+276,658,ngựa vào,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+277,32,Hoa kim ngân,6g,Bóc tách từ sách Đỗ Tất Lợi
+277,604,cam thảo,3g,Bóc tách từ sách Đỗ Tất Lợi
+285,33,Thương nhĩ từ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+292,34,ng hạ khô thảo trong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+293,34,mã đao: Hạ khô thảo 5,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+295,604,cam thảo,2g,Bóc tách từ sách Đỗ Tất Lợi
+298,368,khí,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+299,35,ngứa: Xà sàng từ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+299,121,hoàng liên,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+303,38,Ngô công bỏ đầu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+317,43,ng bèo cái tùy,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+320,408,ng vòng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+324,108,chân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+325,20,khu phong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+325,468,thường đùng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+334,52,ng chín mé: Lã ké hoa vàng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+338,389,ngộ độc do mã tiền,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+344,54,gồm nhiều vị : Liên kiều,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+346,297,bệnh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+354,419,vàng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+355,513,Rê thanh táo,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+355,678,miết giáp,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+355,461,sài bô,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+359,129,Hoàng bá,12g,Bóc tách từ sách Đỗ Tất Lợi
+360,64,Thanh đại,5g,Bóc tách từ sách Đỗ Tất Lợi
+360,99,hàn the,5g,Bóc tách từ sách Đỗ Tất Lợi
+360,582,tây ngưu hoàng,1g,Bóc tách từ sách Đỗ Tất Lợi
+371,672,người,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+371,67,2 không,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+373,102,nấc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+375,637,vú,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+396,672,người,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+399,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+399,522,chữa hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+403,93,Chữa phù thững: Rễ thóc lép,12g,Bóc tách từ sách Đỗ Tất Lợi
+403,443,lá cối xay,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+404,629,ng rượu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+407,268,ng tiêu độc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+417,189,tối đa,20g,Bóc tách từ sách Đỗ Tất Lợi
+421,102,: Sử quân tử,40g,Bóc tách từ sách Đỗ Tất Lợi
+427,672,người,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+443,468,“Thường sơn triệt ngược”,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+444,59,phù,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+445,254,thuốc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+456,102,trị giun,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+459,214,huyết ly,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+466,102,tẩy giun kim,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+470,265,gừng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+471,672,người lớn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+475,122,Chữa đi ly: Hoàng liên gai,4g,Bóc tách từ sách Đỗ Tất Lợi
+476,122,Hoàng liên gai,10g,Bóc tách từ sách Đỗ Tất Lợi
+476,629,rượu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+479,124,ng đằng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+486,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+489,297,bệnh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+491,131,Lá ba chẽ tươi giã,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+495,254,ng thuốc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+497,682,rắn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+507,268,ng tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+510,44,gà,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+524,146,Trạch tà,40g,Bóc tách từ sách Đỗ Tất Lợi
+524,280,bạch truật,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+525,145,xa tiền,25g,Bóc tách từ sách Đỗ Tất Lợi
+531,153,Phục linh,10g,Bóc tách từ sách Đỗ Tất Lợi
+531,13,mộc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+535,154,Đăng tâm thảo,2g,Bóc tách từ sách Đỗ Tất Lợi
+538,155,Thông thảo,10g,Bóc tách từ sách Đỗ Tất Lợi
+538,11,hạt bông,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+539,433,sao đen để câm máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+540,458,Xirô nhân trần: Nhân trân,24g,Bóc tách từ sách Đỗ Tất Lợi
+543,495,đậu sị,20g,Bóc tách từ sách Đỗ Tất Lợi
+544,157,nghệ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+549,522,hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+549,44,ho gà,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+550,160,mật,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+553,268,chậm tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+557,60,nhang,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+569,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+570,168,đậu đen,10g,Bóc tách từ sách Đỗ Tất Lợi
+570,13,mộc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+571,69,buốt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+571,59,phù,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+572,171,Mộc tặc,15g,Bóc tách từ sách Đỗ Tất Lợi
+572,191,xích đậu,100g,Bóc tách từ sách Đỗ Tất Lợi
+575,598,ít sữa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+577,172,Mộc thông,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+577,153,phục linh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+577,146,trạch tả,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+577,154,đăng tâm,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+578,598,thiếu sữa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+578,99,kinh nguyệt bế,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+579,531,kết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+584,30,Trung Quốc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+591,648,Chống mọt đậu xanh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+591,168,đậu đen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+594,490,bụng báng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+595,149,bạch mao căn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+599,499,bỏng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+600,189,ng lên đa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+605,191,Xích tiểu đậu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+605,17,đương quy tán  dùng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+606,191,Đậu đỏ nhỏ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+606,17,đương quy hai vị,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+611,297,bệnh về thận,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+611,268,khó tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+616,198,Chữa bỏng lứa: Cây móng lưng rồng tán bột,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+620,200,Rau đắng khô,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+621,69,đái buốt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+625,201,ng: Rễ tiết dê 4 phần,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+627,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+630,490,bụng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+639,13,nhuộm,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+640,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+641,411,lá phèn đen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+643,55,máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+644,213,Long nha thảo tố:,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+649,55,máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+651,214,huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+655,219,Dùng bách thảo sương trộn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+658,214,huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+659,368,khí,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+662,228,Ba kích nhục,10g,Bóc tách từ sách Đỗ Tất Lợi
+662,588,thục địa,10g,Bóc tách từ sách Đỗ Tất Lợi
+672,231,đừa cạn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+695,102,giun kim,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+702,268,ng tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+704,268,ng tiêu v,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+711,658,ngựa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+714,44,gà,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+717,263,Chỉ truật thang: Chỉ thực,20g,Bóc tách từ sách Đỗ Tất Lợi
+717,280,bạch truật,6g,Bóc tách từ sách Đỗ Tất Lợi
+720,263,Chủ thực,20g,Bóc tách từ sách Đỗ Tất Lợi
+720,531,bỏ kết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+722,602,quế chỉ,1g,Bóc tách từ sách Đỗ Tất Lợi
+724,265,Can khương,10g,Bóc tách từ sách Đỗ Tất Lợi
+726,102,tẩy giun,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+730,268,Hồ tiêu,5g,Bóc tách từ sách Đỗ Tất Lợi
+730,725,thạch tín 0,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+731,268,Hồ tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+731,9,bán hạ chế,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+733,269,Hậu'phác,6g,Bóc tách từ sách Đỗ Tất Lợi
+733,263,chỉ thực,3g,Bóc tách từ sách Đỗ Tất Lợi
+733,331,đại hoàng,3g,Bóc tách từ sách Đỗ Tất Lợi
+734,269,Hậu phác,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+742,272,nôn ra: Nga truật,4g,Bóc tách từ sách Đỗ Tất Lợi
+742,721,muối ăn 3 hạt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+744,273,Ngó thù du,5g,Bóc tách từ sách Đỗ Tất Lợi
+744,265,can khương,2g,Bóc tách từ sách Đỗ Tất Lợi
+745,273,Ngô thù du,2g,Bóc tách từ sách Đỗ Tất Lợi
+745,285,mộc hương,2g,Bóc tách từ sách Đỗ Tất Lợi
+745,121,hoàng liên,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+747,278,xương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+752,276,Trần bì,12g,Bóc tách từ sách Đỗ Tất Lợi
+755,277,Cao lương khương tửn dầu vừng sao,40g,Bóc tách từ sách Đỗ Tất Lợi
+756,268,kém tiêu hoá,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+759,73,ng bạc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+760,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+761,479,điêu: Hương nhu,80g,Bóc tách từ sách Đỗ Tất Lợi
+761,279,bạch biển đậu sao bỏ vỏ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+766,272,ng truật,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+768,280,Bạch truật 6kg,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+786,293,Nhục đậu khấu 0,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+787,263,thực,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+789,65,ng trường,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+790,671,ng tiện,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+793,531,kết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+795,304,đầu thống,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+796,538,một,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+802,311,Kha tử,4g,Bóc tách từ sách Đỗ Tất Lợi
+809,268,tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+811,522,hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+826,582,ngưu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+830,327,Mang tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+831,327,Mang tiêu,30g,Bóc tách từ sách Đỗ Tất Lợi
+831,273,ngô thù đu,40g,Bóc tách từ sách Đỗ Tất Lợi
+834,241,Ba đậu 200mg,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+838,268,chậm tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+846,599,ng trâu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+848,563,mắt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+849,335,thảo quyết minh mắt sẽ sáng ra,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+850,335,Thảo quyết minh,15g,Bóc tách từ sách Đỗ Tất Lợi
+850,271,long đờm thảo,3g,Bóc tách từ sách Đỗ Tất Lợi
+850,169,hoàng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+851,268,ng tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+857,268,ng tiêu hoá,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+864,383,đm gối,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+869,551,loét lưỡi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+870,551,loét lưỡi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+871,214,băng huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+879,288,ng nhân dân),Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+881,278,xương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+889,326,đại,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+892,359,Hy thiêm thảo,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+892,115,đại toán,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+906,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+912,419,vàng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+913,268,giúp sự tiêu hoá,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+917,278,xương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+924,254,ng thuốc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+926,20,phong tì,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+931,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+932,377,Lá lốt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+932,36,rễ bưởi bung,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+932,365,rễ cây vòi voi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+934,490,bụng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+938,727,thủy ngân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+939,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+941,383,gối,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+943,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+953,278,gẫy xương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+954,383,gối,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+969,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+970,241,cho mát,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+975,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+994,420,Cốc tỉnh thảo,10g,Bóc tách từ sách Đỗ Tất Lợi
+995,420,Cốc tỉnh thảo,8g,Bóc tách từ sách Đỗ Tất Lợi
+995,673,địa long,12g,Bóc tách từ sách Đỗ Tất Lợi
+1000,625,lá mảnh cộng,50g,Bóc tách từ sách Đỗ Tất Lợi
+1004,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1005,424,Hái cành xương rồng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1007,425,Đan răng: Tế tân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1008,425,Tế tân,2g,Bóc tách từ sách Đỗ Tất Lợi
+1008,9,bán hạ,2g,Bóc tách từ sách Đỗ Tất Lợi
+1008,153,phục,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1021,434,ng: Tán nhỏ tất bạt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1023,299,đạng dung dịch 1%,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1028,441,Lá bạc hà,6g,Bóc tách từ sách Đỗ Tất Lợi
+1028,449,kinh giới,6g,Bóc tách từ sách Đỗ Tất Lợi
+1028,482,phòng phong,5g,Bóc tách từ sách Đỗ Tất Lợi
+1032,442,Bạch chỉ,30g,Bóc tách từ sách Đỗ Tất Lợi
+1032,473,xuyên khung,30g,Bóc tách từ sách Đỗ Tất Lợi
+1035,241,đau mát,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1037,563,mắt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1037,445,mũi rắc: Cúc hoa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1037,473,xuyên khung,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1038,268,ng tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1045,671,ng tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1046,447,Đạm trúc điệp l,5g,Bóc tách từ sách Đỗ Tất Lợi
+1046,155,thông thảo,5g,Bóc tách từ sách Đỗ Tất Lợi
+1052,448,Hành,60g,Bóc tách từ sách Đỗ Tất Lợi
+1052,265,sinh khương,10g,Bóc tách từ sách Đỗ Tất Lợi
+1056,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1057,449,Một nắm kinh giới tươi (thứ kinh giới Việt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1059,449,Kinh giới tán: Kinh giới tuệ sao vàng tán nhỏ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1061,522,hen suyễn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1069,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1070,473,xuyên,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1071,452,Màn kinh tử,80g,Bóc tách từ sách Đỗ Tất Lợi
+1079,20,phong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1081,457,Ngưu bàng tử 8Og sao vàng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1083,457,Ngưu bàng tử  (nửa sao,6g,Bóc tách từ sách Đỗ Tất Lợi
+1083,59,phù,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1087,297,bệnh gan,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1089,326,đại,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1091,214,huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1096,459,Qua lâu bì,10g,Bóc tách từ sách Đỗ Tất Lợi
+1096,665,bạch cương tàm IÔg,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1097,77,quả tốt hơn chế phẩm của đại phong tử,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1108,461,Sài hồ,160g,Bóc tách từ sách Đỗ Tất Lợi
+1108,604,cam thảo,40g,Bóc tách từ sách Đỗ Tất Lợi
+1111,462,Cát căn,20g,Bóc tách từ sách Đỗ Tất Lợi
+1112,563,ng mắt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1117,464,Thạch hộc,6g,Bóc tách từ sách Đỗ Tất Lợi
+1117,519,mạch môn,4g,Bóc tách từ sách Đỗ Tất Lợi
+1117,521,tỳ bà diệp,4g,Bóc tách từ sách Đỗ Tất Lợi
+1122,268,giúp sự tiêu hoá,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1124,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1136,256,ng sơn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1137,468,Thường sơn,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1138,468,Thường sơn,12g,Bóc tách từ sách Đỗ Tất Lợi
+1138,678,miết giáp,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1144,105,đâu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1162,490,ng bụng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1164,473,Xuyên khung,3g,Bóc tách từ sách Đỗ Tất Lợi
+1164,425,tế tân,2g,Bóc tách từ sách Đỗ Tất Lợi
+1164,2,hương phụ,3g,Bóc tách từ sách Đỗ Tất Lợi
+1166,304,thống,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1170,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1173,8,mồ hôi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1182,480,Khương hoạt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1182,517,la bặc tử,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1186,432,gió gây ra (phong là gió,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1186,372,phòng là phòng bị),Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1190,482,Phòng phong,80g,Bóc tách từ sách Đỗ Tất Lợi
+1190,473,xuyên khung,40g,Bóc tách từ sách Đỗ Tất Lợi
+1190,288,nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1193,484,Thăng ma,8g,Bóc tách từ sách Đỗ Tất Lợi
+1193,462,cát căn,5g,Bóc tách từ sách Đỗ Tất Lợi
+1193,630,đại táo,10g,Bóc tách từ sách Đỗ Tất Lợi
+1193,23,thược,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1197,522,hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1198,489,giật trẻ em: Lá bàm bàm,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1212,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1215,606,cam thảo nam,6g,Bóc tách từ sách Đỗ Tất Lợi
+1222,503,Vỏ gáo,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1222,130,cỏ sữa lớn lá,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1226,102,giun và,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1229,44,ho gà,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1235,91,nhân hạt mơ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1238,629,ng rượu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1241,522,chữa ho hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1242,514,Dùng 5-7 lá húng chanh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1249,214,huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1251,232,ng Trọng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1252,519,Mạch môn đông bỏ )õi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1253,672,Những người,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1255,232,ng Trọng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1256,520,Cát cánh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1257,268,giúp sự tiêu hoá,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1258,521,Tì bà diệp,20g,Bóc tách từ sách Đỗ Tất Lợi
+1258,570,khoản đông,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1259,521,Tì bà diệp,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1264,523,Bách hợp,30g,Bóc tách từ sách Đỗ Tất Lợi
+1264,519,mạch môn đông,10g,Bóc tách từ sách Đỗ Tất Lợi
+1264,104,bách bộ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1265,638,chữa cao,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1271,357,xương đau nhức,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1273,671,tiện,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1274,99,kinH nguyệt bế,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1275,524,Tang bạch bì,600g,Bóc tách từ sách Đỗ Tất Lợi
+1284,258,chát,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1286,527,Vỏ núc nác tươi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1289,529,An tức hương,20g,Bóc tách từ sách Đỗ Tất Lợi
+1291,530,Viễn chí,4g,Bóc tách từ sách Đỗ Tất Lợi
+1291,604,cam thảo,6g,Bóc tách từ sách Đỗ Tất Lợi
+1292,20,phong té,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1302,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1303,258,chát,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1306,533,quả trám trong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1307,533,Ngậm quả trám,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1310,102,nấc),Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1311,102,nấc:,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1312,9,bán hạ,2g,Bóc tách từ sách Đỗ Tất Lợi
+1313,268,ng tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1323,522,hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1324,214,huyết ly,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1326,543,Bạch cập tán nhỏ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1327,543,Bạch cập tán nhỏ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1336,102,trị giun sán,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1347,383,gối,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1348,105,gửi xoan,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1349,561,Hạt dâu gia xoan,6g,Bóc tách từ sách Đỗ Tất Lợi
+1352,562,“Tri mẫu,5g,Bóc tách từ sách Đỗ Tất Lợi
+1352,524,tang bạch bì,10g,Bóc tách từ sách Đỗ Tất Lợi
+1352,519,mạch môn đông,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1358,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1360,65,5 để sống,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1371,55,máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1372,214,băng huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1373,2,Gương sen 5 cái hương phụ,80g,Bóc tách từ sách Đỗ Tất Lợi
+1374,55,máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1395,145,đề,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1401,268,tiêu khát,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1407,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1409,297,bệnh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1412,268,ng tiêu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1416,254,ng thuốc,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1427,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1434,671,tiểu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1441,214,băng huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1442,268,tiêu khát,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1443,105,đâu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1451,20,phong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1454,519,mạch môn đông,3g,Bóc tách từ sách Đỗ Tất Lợi
+1454,524,tang bạch bì,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1455,591,Ý dĩ nhân,40g,Bóc tách từ sách Đỗ Tất Lợi
+1455,362,phổ thục linh,20g,Bóc tách từ sách Đỗ Tất Lợi
+1457,369,hoạt,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1462,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1463,563,mắt mờ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1463,459,đùng lâu đẹp nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1465,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1466,597,Thỏ ty tử,7g,Bóc tách từ sách Đỗ Tất Lợi
+1466,618,kim anh tử,6g,Bóc tách từ sách Đỗ Tất Lợi
+1471,168,đậu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1472,672,người,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1477,600,Phá cố chỉ,400g,Bóc tách từ sách Đỗ Tất Lợi
+1485,295,quả,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1502,608,Ngũ vị từ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1503,608,Ngũ vị từ,80g,Bóc tách từ sách Đỗ Tất Lợi
+1504,608,Ngũ vị tử,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1507,57,đồng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1508,20,dương),Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1518,20,dương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1519,34,ng hạ thảo,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1522,2,phụ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1529,8,hôi trộm,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1538,618,Hoa kim anh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1541,511,eczê¿ma,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1545,620,Lá hồ đào tươi,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1550,624,Cát sâm,12g,Bóc tách từ sách Đỗ Tất Lợi
+1550,462,cát căn,12g,Bóc tách từ sách Đỗ Tất Lợi
+1550,604,cam thảo,4 g,Bóc tách từ sách Đỗ Tất Lợi
+1552,625,ng cộng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1555,628,Chữa liệt dương: Dâm dương hoắc,8g,Bóc tách từ sách Đỗ Tất Lợi
+1568,667,nhựa mủ,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1576,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1584,432,gió,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1593,522,hen,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1594,608,ngũ vị tử,28g,Bóc tách từ sách Đỗ Tất Lợi
+1596,288,ng nhân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1598,20,ng dương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1606,499,ng bỏng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1607,661,Mật ong,10g,Bóc tách từ sách Đỗ Tất Lợi
+1607,276,trần bì,6g,Bóc tách từ sách Đỗ Tất Lợi
+1608,661,Mật ong,60g,Bóc tách từ sách Đỗ Tất Lợi
+1608,622,vừng đen,50g,Bóc tách từ sách Đỗ Tất Lợi
+1611,685,ng tàm,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1612,665,Bạch cương tàm tán,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1614,9,bán,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1625,20,phong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1627,44,gà,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1633,189,đa,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1635,470,ng tốn tiền,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1641,304,đầu thống,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1660,673,Địa long  khô,50g,Bóc tách từ sách Đỗ Tất Lợi
+1663,673,Tà giun đất,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1663,648,còn vị đậu xanh,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1672,679,Nhân trung bạch,4 g,Bóc tách từ sách Đỗ Tất Lợi
+1673,368,ng khí,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1679,20,phong v,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1685,357,xương sưng đau,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1688,602,quế chỉ,8g,Bóc tách từ sách Đỗ Tất Lợi
+1690,214,băng huyết,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1693,684,Quy bản,200g,Bóc tách từ sách Đỗ Tất Lợi
+1698,686,giác,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1700,686,Tê giác,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1700,482,phòng phong,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1700,172,mộc thông,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1700,524,tang bạch,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1701,278,xương,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1707,288,ng nhân dân,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1723,490,bụng,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
+1724,593,hoài sơn,100g,Bóc tách từ sách Đỗ Tất Lợi
+1727,55,máu,Theo kinh nghiệm,Bóc tách từ sách Đỗ Tất Lợi
