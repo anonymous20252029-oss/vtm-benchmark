@@ -1,7 +1,7 @@
 """
 VTM-TDA Benchmark: Topological Data Orchestration for Indigenous Ethnomedicine
 Interactive Clinical Demonstration Platform (FAIR-Compliant AI Platform)
-Author: 
+
 """
 
 import streamlit as st
