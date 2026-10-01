@@ -131,7 +131,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 1. Centered Header
+# 1. Centered Header (Journal Info Removed)
 st.markdown("""
 <div class="hero-title">🌿 VTM-TDA: Topological Data Orchestration Framework</div>
 <div class="hero-sub">AI-Ready Benchmark & Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)</div>
