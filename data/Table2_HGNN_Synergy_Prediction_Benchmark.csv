@@ -1,0 +1,4 @@
+Model / Metric,AUC-ROC,Average Precision,Sparsity Robustness
+Pairwise Baseline (GCN),0.827,0.8302,Low
+Topological Hypergraph (Ours),1,1,"High (99.39%
+invariant"
