@@ -349,13 +349,13 @@ with tab_hgnn:
         h_c1, h_c2 = st.columns([1.3, 1.0])
         with h_c1:
             st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>Table 2: Link Prediction Benchmark (Hold-out Test Set N=106, 80/20 Edge Split)</p>", unsafe_allow_html=True)
-           df_t2_updated = pd.DataFrame({
+            df_t2_updated = pd.DataFrame({
                 "Model / Metric": ["Pairwise Baseline (GCN)", "Topological Hypergraph (Ours)"],
                 "AUC-ROC": ["0.8270", "1.0000"],
                 "Average Precision": ["0.8302", "1.0000"],
                 "Sparsity Robustness": ["Low (Oversmoothed)", "High (99.39% invariant)"]
             })
-st.dataframe(df_t2_updated, use_container_width=True, height=120)
+            st.dataframe(df_t2_updated, use_container_width=True, height=120)
         with h_c2:
             st.markdown("""
             <div style="background:#F0FDFA; border:1px solid #CCFBF1; border-left:3.5px solid #0D9488; border-radius:4px; padding:8px 10px; font-size:0.78rem; line-height:1.5;">
