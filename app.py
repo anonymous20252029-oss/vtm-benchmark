@@ -59,9 +59,6 @@ st.markdown("""
     <p style="margin: 8px 0 0 0; font-size: 1.05rem; opacity: 0.9;">
         AI-Ready FAIR Benchmark and Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)
     </p>
-    <p style="margin: 4px 0 0 0; font-size: 0.85rem; opacity: 0.75;">
-        Computational and Structural Biotechnology Journal (CSBJ) Special Issue on <i>Data Orchestration</i> | Author: Thi Kim-Anh Vo (VŠB - Technical University of Ostrava)
-    </p>
 </div>
 """, unsafe_allow_html=True)
 
