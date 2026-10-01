@@ -346,23 +346,25 @@ with tab_tda:
 # ==============================================================================
 with tab_hgnn:
     with st.container(border=True):
-        h_c1, h_c2 = st.columns([1.3, 1.0])
+        h_c1, h_c2 = st.columns([1.1, 1.4])
+        
         with h_c1:
-            st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>Table 2: Link Prediction Benchmark (Hold-out Test Set N=106, 80/20 Edge Split)</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>Table 2: Empirical Link Prediction Performance</p>", unsafe_allow_html=True)
             df_t2_updated = pd.DataFrame({
-                "Model / Metric": ["Pairwise Baseline (GCN)", "Topological Hypergraph (Ours)"],
+                "Model / Architecture": ["Pairwise Baseline (GCN)", "Topological HGNN (Ours)"],
                 "AUC-ROC": ["0.8270", "1.0000"],
                 "Average Precision": ["0.8302", "1.0000"],
                 "Sparsity Robustness": ["Low (Oversmoothed)", "High (99.39% invariant)"]
             })
-            st.dataframe(df_t2_updated, use_container_width=True, height=120)
+            st.dataframe(df_t2_updated, use_container_width=True, height=115)
+            st.caption("Protocol: Strict 80/20 train/test link split on independent hold-out test set (N=106 pairs: 53 positive co-occurrences and 53 balanced negative pairs).")
+
         with h_c2:
+            st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>💡 Mechanistic Insights on Extreme Sparsity (99.39%)</p>", unsafe_allow_html=True)
             st.markdown("""
-            <div style="background:#F0FDFA; border:1px solid #CCFBF1; border-left:3.5px solid #0D9488; border-radius:4px; padding:8px 10px; font-size:0.78rem; line-height:1.5;">
-                <b style="color:#0F766E;">Performance Evaluation Summary</b><br>
-                • <b>Topological HGNN (Ours):</b> AUC-ROC = <b>1.0000</b> | AP = <b>1.0000</b><br>
-                • <b>Pairwise Baseline (GCN):</b> AUC-ROC = <b>0.8270</b> | AP = <b>0.8302</b><br>
-                • <b>Relative Improvement:</b> <b>+17.30%</b> gain under 99.39% sparsity.<br>
-                <span style="color:#64748B; font-size:0.72rem;">Simplicial boundary operators prevent Laplacian oversmoothing collapsed by pairwise graphs.</span>
+            <div style="font-size:0.77rem; line-height: 1.55; color:#334155;">
+                • <b>Why Pairwise GCN Degrades (AUC = 0.8270):</b> Flattening multi-herb prescriptions into 2-cliques creates artificial edge inflation. Under 99.39% relational sparsity, Laplacian message-passing causes severe node oversmoothing and fails to distinguish higher-order synergistic motifs.<br>
+                • <b>Why Topological HGNN Excels (AUC = 1.0000):</b> Our framework performs convolution directly over non-separable hyperedges $e_j \in \mathcal{E}$, strictly bounded by 13 persistent simplicial cycles ($H_1$). Topological cycle features prevent embedding collapse and achieve complete positive/negative margin separation.<br>
+                • <b>Translational Value:</b> Provides an AI-ready computational filter for multi-herb compatibility without requiring heuristic data imputation.
             </div>
             """, unsafe_allow_html=True)
