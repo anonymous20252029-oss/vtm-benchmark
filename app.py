@@ -1,8 +1,7 @@
 """
 VTM-TDA Benchmark: Topological Data Orchestration for Indigenous Ethnomedicine
 Interactive Clinical Demonstration Platform (FAIR-Compliant AI Platform)
-Author: Thi Kim-Anh Vo
-Journal: Computational and Structural Biotechnology Journal (CSBJ)
+Author: 
 """
 
 import streamlit as st
