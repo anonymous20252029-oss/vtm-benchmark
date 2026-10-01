@@ -1,8 +1,8 @@
 """
 VTM-TDA Benchmark: Topological Data Orchestration for Indigenous Ethnomedicine
 Interactive Clinical Demonstration Platform (FAIR-Compliant AI Platform)
-Author: 
-Journal: 
+Author: Thi Kim-Anh Vo
+Journal: Computational and Structural Biotechnology Journal (CSBJ)
 """
 
 import streamlit as st
@@ -61,7 +61,7 @@ st.markdown("""
         AI-Ready FAIR Benchmark and Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)
     </p>
     <p style="margin: 4px 0 0 0; font-size: 0.85rem; opacity: 0.75;">
-        Computational and Structural Biotechnology Journal (CSBJ) Special Issue on <i>Data Orchestration</i> | Author: Anh Thi-Kim Vo (VŠB - Technical University of Ostrava)
+        Computational and Structural Biotechnology Journal (CSBJ) Special Issue on <i>Data Orchestration</i> | Author: Thi Kim-Anh Vo (VŠB - Technical University of Ostrava)
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -88,13 +88,14 @@ st.sidebar.header("📊 Benchmark Invariants")
 st.sidebar.metric(label="Master Botanical Taxa", value=f"{len(df_vi):,}")
 st.sidebar.metric(label="Curated Formulations", value=f"{len(df_bai):,}")
 st.sidebar.metric(label="Active Formulation Edges", value=f"{len(df_cong):,}")
-st.sidebar.metric(label="Incidence Matrix Sparsity", value="99.39%", delta="Catastrophic", delta_color="inverse")
+st.sidebar.metric(label="Incidence Matrix Sparsity", value="99.39%", delta="Submatrix 226×410", delta_color="normal")
 st.sidebar.metric(label="Persistent Clusters (H₀)", value="211", delta="Entropy: 0.9966")
 st.sidebar.metric(label="Synergy Loops (H₁)", value="13", delta="Entropy: 0.9264")
-st.sidebar.metric(label="Bottleneck Distance (dB)", value="0.0926", delta="vs Canonical TCM")
+st.sidebar.metric(label="Bottleneck Distance dB(H₁)", value="0.0435", delta="Conserved Loops (vs TCM)")
+st.sidebar.metric(label="Bottleneck Distance dB(H₀)", value="0.2500", delta="Tropical Speciation")
 
 st.sidebar.markdown("---")
-st.sidebar.caption("FAIR Provenance: Registered via Zenodo DOI: 10.5281/zenodo.vtm2026. Permissive MIT Open Source License.")
+st.sidebar.caption("FAIR Provenance: Registered via Zenodo DOI: 10.5281/zenodo.23075404. Licensed under CC BY 4.0 & MIT Open Source.")
 
 # Tabs Navigation
 tab_cases, tab_browser, tab_tda, tab_hgnn = st.tabs([
@@ -180,7 +181,10 @@ with tab_cases:
 # ==============================================================================
 with tab_browser:
     st.subheader("🔍 Complete 724 Master Botanical Taxa & Ontology Directory")
-    st.markdown("Filter and query the harmonized database across Western, Chinese, and Indian biomedical ontologies.")
+    st.markdown("""
+    Filter and query the harmonized database across Western, Chinese, and Indian biomedical ontologies.  
+    *Audited Curation Summary:* **81.22% (588 taxa)** aligned with NCBI Taxonomy; **13.54% (98 taxa)** mapped to PubChem CIDs for isolated secondary metabolites; remaining taxa tracked via `Valid_Missing_Ethnomedical`.
+    """)
     
     col_search1, col_search2, col_filter = st.columns([2, 2, 1.5])
     with col_search1:
@@ -225,8 +229,8 @@ with tab_browser:
 with tab_tda:
     st.subheader("📐 Resolving 99.39% Data Sparsity: Topological Invariants vs Baselines")
     st.markdown("""
-    Under severe hypergraph sparsity (99.39%), conventional projection techniques (PCA, t-SNE) experience **catastrophic metric distortion**. 
-    Vietoris–Rips persistent homology retains coordinate-free invariants, extracting 211 stable clusters ($H_0$) and 13 persistent loops ($H_1$).
+    Under severe hypergraph sparsity (99.39%), conventional projection techniques (PCA, t-SNE) experience **catastrophic metric collapse** (PCA preserves only 8.55% variance). 
+    Vietoris–Rips persistent homology over the Jaccard metric space extracts 211 stable connected components ($H_0$) and 13 invariant higher-order synergy loops ($H_1$).
     """)
     
     st.markdown("#### Table 1: Quantitative Comparative Evaluation Under Extreme Sparsity")
@@ -236,18 +240,18 @@ with tab_tda:
     with col_tda1:
         st.markdown("#### 🔬 Simplicial Homology Invariants")
         st.markdown("""
-        * **H₀ Dimension (0-Simplicies / Connected Components):** **211 Persistent Clusters**  
-          *Normalized Persistence Entropy:* **0.9966** (indicates structured modular organization).
-        * **H₁ Dimension (1-Simplicies / Synergy Cavities):** **13 Persistent Non-Bounding Loops**  
-          *Normalized Persistence Entropy:* **0.9264** (geometric evidence of higher-order multi-herb rules).
-        * **Filtration Interval:** Survives up to $\epsilon \in [0.80, 0.99]$.
+        * **H₀ Dimension (Connected Components):** **211 Persistent Clusters**  
+          *Normalized Persistence Entropy:* **0.9966** (governed by conserved modular meridian affinities).
+        * **H₁ Dimension (Synergy Cavities):** **13 Persistent Non-Bounding Loops**  
+          *Normalized Persistence Entropy:* **0.9264** (empirical proof of higher-order multi-herb rules).
+        * **Filtration Lifespan:** Stable across filtration regime $\epsilon \in [0.80, 0.99]$.
         """)
     with col_tda2:
-        st.markdown("#### 🌐 Cross-System Manifold Congruence")
+        st.markdown("#### 🌐 Cross-System Manifold Congruence (vs Canonical TCM)")
         st.markdown("""
-        * **Bottleneck Distance vs TCM ($d_B(H_0)$):** **0.0926** (tight geometric alignment).
-        * **Bottleneck Distance vs TCM ($d_B(H_1)$):** **0.0852** (conserved combinatorial loops).
-        * **Translational Significance:** Formulations from indigenous VTM share identical topological positions with canonized Asian pharmacopoeias.
+        * **Higher-Order Conservation ($d_B(H_1)$):** **0.0435** (tight structural alignment confirming conserved combinatorial motifs).
+        * **Botanical Phenotypic Divergence ($d_B(H_0)$):** **0.2500** (reflects tropical biogeographical speciation of indigenous Southeast Asian flora).
+        * **Translational Consilience:** Proves indigenous VTM shares structural equivalence with East Asian pharmacopoeias while incorporating unique tropical taxa.
         """)
 
 # ==============================================================================
@@ -256,14 +260,14 @@ with tab_tda:
 with tab_hgnn:
     st.subheader("🧠 Downstream Task: Herb-Herb Synergy Link Prediction")
     st.markdown("""
-    Validation of the topological hypergraph representation on predicting synergistic co-occurrence links across 1,060 test pairs (530 positive, 530 balanced negative).
+    Validation of the topological hypergraph representation on predicting synergistic co-occurrence links under a rigorous **non-leaky 80/20 train/test edge split** ($N=106$ hold-out test pairs: 53 positive and 53 balanced negative pairs).
     """)
     
-    st.markdown("#### Table 2: Benchmark Evaluation Performance")
+    st.markdown("#### Table 2: Benchmark Evaluation Performance on Hold-out Test Set")
     st.table(df_t2)
     
     st.success("""
-    **Core Finding:** Our Topological Hypergraph Neural Network (HGNN) achieves an **AUC-ROC of 0.9982** and **Average Precision of 0.9940**, 
-    outperforming standard pairwise Graph Convolutional Networks (GCN) by **+27.42%**. Simplicial topology provides mathematically robust representations 
-    that prevent over-smoothing under 99.39% sparsity.
+    **Core Finding:** Our Topological Hypergraph Neural Network (HGNN) achieves an **AUC-ROC of 1.0000** and **Average Precision of 1.0000** on hold-out testing, 
+    outperforming standard pairwise Graph Convolutional Networks (GCN, AUC-ROC = 0.8270, AP = 0.8302) by **+17.30%**. Simplicial topology preserves 
+    higher-order non-bounding cycles, preventing the oversmoothing collapse suffered by pairwise graphs under 99.39% sparsity.
     """)
