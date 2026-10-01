@@ -8,7 +8,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Cấu hình trang toàn màn hình, đóng hoàn toàn sidebar
+# Cấu hình trang toàn màn hình
 st.set_page_config(
     page_title="VTM-TDA Executive Dashboard",
     page_icon="🌿",
@@ -16,53 +16,47 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS ép toàn bộ giao diện vừa khít 1 Viewport không scroll
+# Custom CSS tối giản, triệt tiêu khoảng cách thừa mà không can thiệp vỡ DOM
 st.markdown("""
 <style>
-    /* 1. Triệt tiêu khoảng trống thừa của Streamlit */
-    html, body, [data-testid="stAppViewContainer"] {
-        overflow: hidden !important;
-        height: 100vh !important;
-        background-color: #F8FAFC;
-    }
-    .main .block-container {
-        padding: 0.6rem 1.5rem 0.2rem 1.5rem !important;
+    /* 1. Nén lề trang chính */
+    .block-container {
+        padding-top: 1rem !important;
+        padding-bottom: 0.5rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
         max-width: 100% !important;
-        height: 100vh;
     }
     
-    /* Ẩn hoàn toàn nút mở sidebar */
+    /* Ẩn sidebar thừa */
     [data-testid="collapsedControl"] { display: none !important; }
 
-    /* 2. Centered Header */
-    .hero-header {
-        text-align: center;
-        margin-bottom: 6px;
-    }
+    /* 2. Tiêu đề chính */
     .hero-title {
-        font-size: 1.35rem;
+        text-align: center;
+        font-size: 1.45rem;
         font-weight: 800;
         color: #0F172A;
-        letter-spacing: -0.02em;
         margin: 0;
+        line-height: 1.2;
     }
     .hero-sub {
-        font-size: 0.78rem;
+        text-align: center;
+        font-size: 0.8rem;
         color: #475569;
-        margin-top: 1px;
+        margin: 2px 0 8px 0;
     }
 
-    /* 3. Horizontal Metric Ribbon (Băng ngang 1 dòng trên cùng) */
+    /* 3. Băng thông số ngang (Metric Ribbon) */
     .kpi-ribbon {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 8px;
         background: #FFFFFF;
-        padding: 6px 10px;
+        padding: 6px 12px;
         border-radius: 8px;
         border: 1px solid #E2E8F0;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
     .kpi-card {
         text-align: center;
@@ -76,56 +70,31 @@ st.markdown("""
         color: #64748B;
         text-transform: uppercase;
         display: block;
-        line-height: 1.1;
     }
     .kpi-val {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         font-weight: 800;
         color: #0F172A;
-        line-height: 1.2;
     }
     .kpi-sub {
-        font-size: 0.62rem;
+        font-size: 0.63rem;
         color: #059669;
         font-weight: 600;
         display: block;
     }
 
-    /* 4. Tab Bar căn chỉnh thanh lịch */
+    /* 4. Tab list */
     .stTabs [data-baseweb="tab-list"] {
         gap: 6px !important;
-        margin-bottom: 6px !important;
+        margin-bottom: 8px !important;
     }
     .stTabs [data-baseweb="tab"] {
         padding: 4px 14px !important;
-        font-size: 0.82rem !important;
-        border-radius: 6px !important;
+        font-size: 0.85rem !important;
         font-weight: 600;
     }
 
-    /* 5. Executive Panels */
-    .exec-panel {
-        background: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 8px;
-        padding: 10px 12px;
-        height: calc(100vh - 195px);
-        box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-        overflow-y: auto;
-    }
-    .panel-header {
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: #0F172A;
-        border-bottom: 2px solid #F1F5F9;
-        padding-bottom: 4px;
-        margin-bottom: 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    /* 6. Formula Cards bên trong Cột 3 */
+    /* 5. Thẻ hiển thị bài thuốc trong cột 3 */
     .formula-badge {
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
@@ -133,25 +102,18 @@ st.markdown("""
         border-radius: 4px;
         padding: 6px 8px;
         margin-bottom: 6px;
-        font-size: 0.76rem;
-    }
-    .formula-title {
-        font-weight: 700;
-        color: #0F172A;
-        margin-bottom: 2px;
+        font-size: 0.78rem;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# 1. Header ở giữa trang
+# 1. Header ở giữa
 st.markdown("""
-<div class="hero-header">
-    <h1 class="hero-title">🌿 VTM-TDA: Topological Data Orchestration Framework</h1>
-    <p class="hero-sub">AI-Ready Benchmark & Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)</p>
-</div>
+<div class="hero-title">🌿 VTM-TDA: Topological Data Orchestration Framework</div>
+<div class="hero-sub">AI-Ready Benchmark & Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)</div>
 """, unsafe_allow_html=True)
 
-# Nạp dữ liệu
+# 2. Nạp dữ liệu
 @st.cache_data
 def load_datasets():
     df_vi = pd.read_csv("data/ViThuoc_Master_Harmonized.csv")
@@ -165,10 +127,10 @@ def load_datasets():
 try:
     df_vi, df_bai, df_cong, df_cross, df_t1, df_t2 = load_datasets()
 except Exception as e:
-    st.error(f"Error loading datasets: {e}")
+    st.error(f"Error loading datasets from 'data/' folder: {e}")
     st.stop()
 
-# 2. BĂNG THÔNG SỐ NGANG 1 DÒNG (Top Metric Ribbon)
+# 3. Băng thông số KPI ngang 1 dòng
 st.markdown(f"""
 <div class="kpi-ribbon">
     <div class="kpi-card">
@@ -209,7 +171,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# 3. Main Navigation
+# 4. Các Tab chức năng
 tab_cases, tab_browser, tab_tda, tab_hgnn = st.tabs([
     "🌟 Clinical Case Explorer",
     "🔍 Multi-Tier Cross-Ontology Directory",
@@ -218,12 +180,9 @@ tab_cases, tab_browser, tab_tda, tab_hgnn = st.tabs([
 ])
 
 # ==============================================================================
-# TAB 1: BỐ CỤC 3 CỘT THÔNG MINH TRÊN 1 HÀNG
+# TAB 1: BỐ CỤC 3 CỘT TRỰC TIẾP (DÙNG ST.CONTAINER NGUYÊN BẢN CỦA STREAMLIT)
 # ==============================================================================
 with tab_cases:
-    col_1, col_2, col_3 = st.columns([1.1, 1.1, 1.8])
-
-    # Case dictionary
     case_options = {
         "Ích Mẫu (Leonurus heterophyllus)": 1,
         "Hương Phụ (Cyperus rotundus)": 2,
@@ -233,151 +192,132 @@ with tab_cases:
         "Sinh Địa - Thục Địa (Rehmannia glutinosa)": 588
     }
 
-    # CỘT 1: Danh pháp & Thực vật
-    with col_1:
-        st.markdown('<div class="exec-panel">', unsafe_allow_html=True)
-        st.markdown('<div class="panel-header"><span>🌿 Botanical Identity</span></div>', unsafe_allow_html=True)
-        
-        selected_name = st.selectbox("Select Signature Taxon:", list(case_options.keys()), label_visibility="collapsed")
-        selected_id = case_options[selected_name]
-        c_data = df_cross[df_cross['ID_ViThuoc'] == selected_id].iloc[0]
+    col_1, col_2, col_3 = st.columns([1.1, 1.1, 1.8])
 
-        st.markdown(f"""
-        <div style="font-size:0.78rem; line-height: 1.6; margin-top: 6px;">
-            <b>• Vernacular:</b> <span style="color:#0D9488; font-weight:700;">{c_data['TenVietNam']}</span><br>
-            <b>• Latin Binomial:</b> <i>{c_data['Binomial']}</i><br>
-            <b>• Plant Family:</b> {c_data.get('HoThucVat', 'N/A')}<br>
-            <b>• Folk Aliases:</b> {str(c_data.get('TenGoiKhac', 'None'))[:35]}<br>
-            <b>• Kew POWO:</b> <a href="{c_data.get('POWO_Taxon_URL', 'https://powo.science.kew.org')}" target="_blank">POWO Link</a><br>
-            <b>• NCBITaxID:</b> <code>{c_data.get('NCBI_TaxID', 'Verified')}</code>
-        </div>
-        """, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+    # CỘT 1: Danh pháp & Thực vật học
+    with col_1:
+        with st.container(border=True):
+            st.markdown("##### 🌿 Botanical Identity")
+            selected_name = st.selectbox("Select Signature Herb:", list(case_options.keys()), label_visibility="collapsed")
+            selected_id = case_options[selected_name]
+            c_data = df_cross[df_cross['ID_ViThuoc'] == selected_id].iloc[0]
+
+            st.markdown(f"""
+            **• Tên Việt Nam:** `{c_data['TenVietNam']}`  
+            **• Tên khoa học:** *{c_data['Binomial']}*  
+            **• Họ thực vật:** *{c_data.get('HoThucVat', 'N/A')}*  
+            **• Tên gọi khác:** {str(c_data.get('TenGoiKhac', 'None'))[:35]}  
+            **• Kew POWO:** [Link POWO]({c_data.get('POWO_Taxon_URL', 'https://powo.science.kew.org')})  
+            **• NCBI TaxID:** `{c_data.get('NCBI_TaxID', '588 Verified')}`
+            """)
 
     # CỘT 2: Hóa sinh & Đông y Triangulation
     with col_2:
-        st.markdown('<div class="exec-panel">', unsafe_allow_html=True)
-        st.markdown('<div class="panel-header"><span>🌐 Chemistry & Energetics</span></div>', unsafe_allow_html=True)
-        st.markdown(f"""
-        <div style="font-size:0.78rem; line-height: 1.6;">
-            <b>• TCM Equiv.:</b> {c_data.get('TCM_Chinese', 'N/A')} ({c_data.get('TCM_Pinyin', 'N/A')})<br>
-            <b>• TCMSP ID:</b> <code>{c_data.get('TCMSP_ID', 'N/A')}</code><br>
-            <b>• IMPPAT ID:</b> <code>{c_data.get('IMPPAT_ID', 'N/A')}</code><br>
-            <b>• Active Compound:</b> <b>{c_data.get('Primary_Compound', 'N/A')}</b><br>
-            <b>• PubChem CID:</b> <code>{int(c_data['PubChem_CID']) if pd.notna(c_data['PubChem_CID']) else 'N/A'}</code><br>
-            <hr style="margin: 6px 0; border: none; border-top: 1px dashed #E2E8F0;">
-            <b>• Tính Vị:</b> {c_data.get('TinhVi', 'N/A')}<br>
-            <b>• Quy Kinh:</b> <code>{c_data.get('QuyKinh', 'N/A')}</code><br>
-            <b>• Clinical Dosage:</b> {c_data.get('LieuDung', '6-12g/day')}
-        </div>
-        """, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown("##### 🌐 Chemistry & Energetics")
+            st.markdown(f"""
+            **• TCM Equiv.:** {c_data.get('TCM_Chinese', 'N/A')} ({c_data.get('TCM_Pinyin', 'N/A')})  
+            **• TCMSP ID:** `{c_data.get('TCMSP_ID', 'N/A')}`  
+            **• IMPPAT ID:** `{c_data.get('IMPPAT_ID', 'N/A')}`  
+            **• Active Compound:** **{c_data.get('Primary_Compound', 'N/A')}**  
+            **• PubChem CID:** `{int(c_data['PubChem_CID']) if pd.notna(c_data['PubChem_CID']) else 'N/A'}`  
+            ***
+            **• Tính Vị:** {c_data.get('TinhVi', 'N/A')}  
+            **• Quy Kinh:** `{c_data.get('QuyKinh', 'N/A')}`  
+            **• Liều dùng:** {c_data.get('LieuDung', '6-12g/ngày')}
+            """)
 
-    # CỘT 3: Siêu đồ thị & Công thức phối ngũ liên quan
+    # CỘT 3: Các bài thuốc liên kết (Có khung cuộn nội bộ mượt mà)
     with col_3:
-        st.markdown('<div class="exec-panel">', unsafe_allow_html=True)
-        linked_ids = df_cong[df_cong['ID_ViThuoc'] == selected_id]['ID_BaiThuoc'].unique()
-        matching_prescs = df_bai[df_bai['ID_BaiThuoc'].isin(linked_ids)]
-        
-        st.markdown(f"""
-        <div class="panel-header">
-            <span>📜 Clinical Formulations (Master Hypergraph)</span>
-            <span style="font-size:0.7rem; color:#0D9488;">{len(matching_prescs)} Prescriptions Found</span>
-        </div>
-        """, unsafe_allow_html=True)
+        with st.container(border=True):
+            linked_ids = df_cong[df_cong['ID_ViThuoc'] == selected_id]['ID_BaiThuoc'].unique()
+            matching_prescs = df_bai[df_bai['ID_BaiThuoc'].isin(linked_ids)]
+            st.markdown(f"##### 📜 Clinical Formulations ({len(matching_prescs)} found)")
 
-        if len(matching_prescs) > 0:
-            for _, p_row in matching_prescs.iterrows():
-                co_herbs = df_cong[df_cong['ID_BaiThuoc'] == p_row['ID_BaiThuoc']]
-                co_details = df_vi[df_vi['ID_ViThuoc'].isin(co_herbs['ID_ViThuoc'])]
-                roster = " + ".join([f"<span style='color:#0D9488; font-weight:600;'>{h}</span>" for h in co_details['TenVietNam'].tolist()])
-                
-                st.markdown(f"""
-                <div class="formula-badge">
-                    <div class="formula-title">💊 #{p_row['ID_BaiThuoc']}: {p_row['TenBaiThuoc']}</div>
-                    <div style="color:#64748B; font-size:0.72rem; margin:1px 0;"><b>Indication:</b> {p_row.get('ChuTri', 'Standard indication')} | <b>Source:</b> {p_row.get('NguonGoc', 'Đỗ Tất Lợi')}</div>
-                    <div style="font-size:0.72rem; margin-top:3px;"><b>Co-occurring Roster:</b> {roster}</div>
-                </div>
-                """, unsafe_allow_html=True)
-        else:
-            st.markdown("<p style='font-size:0.78rem; color:#64748B; padding:10px;'>Monographic taxon without multi-herb formula interactions.</p>", unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+            with st.container(height=340):
+                if len(matching_prescs) > 0:
+                    for _, p_row in matching_prescs.iterrows():
+                        co_herbs = df_cong[df_cong['ID_BaiThuoc'] == p_row['ID_BaiThuoc']]
+                        co_details = df_vi[df_vi['ID_ViThuoc'].isin(co_herbs['ID_ViThuoc'])]
+                        roster = " + ".join([f"`{h}`" for h in co_details['TenVietNam'].tolist()])
+                        
+                        st.markdown(f"""
+                        <div class="formula-badge">
+                            <b style="color:#0F172A;">💊 #{p_row['ID_BaiThuoc']}: {p_row['TenBaiThuoc']}</b><br>
+                            <span style="color:#64748B;"><b>Chủ trị:</b> {p_row.get('ChuTri', 'Standard indication')} | <b>Nguồn:</b> {p_row.get('NguonGoc', 'Đỗ Tất Lợi')}</span><br>
+                            <span style="margin-top:2px; display:block;"><b>Phối ngũ:</b> {roster}</span>
+                        </div>
+                        """, unsafe_allow_html=True)
+                else:
+                    st.info("Vị thuốc dùng độc vị, không nằm trong phương thang đa vị phức tạp.")
 
 # ==============================================================================
 # TAB 2: DIRECTORY BROWSER
 # ==============================================================================
 with tab_browser:
-    st.markdown('<div class="exec-panel">', unsafe_allow_html=True)
-    f1, f2, f3 = st.columns([1.5, 1.5, 1.0])
-    with f1:
-        s_vn = st.text_input("Filter Vietnamese:", placeholder="Type Vietnamese name...", label_visibility="collapsed")
-    with f2:
-        s_latin = st.text_input("Filter Latin/Compound:", placeholder="Type Latin/Compound...", label_visibility="collapsed")
-    with f3:
-        ck_mapped = st.checkbox("Only Triangulated", value=False)
+    with st.container(border=True):
+        f1, f2, f3 = st.columns([1.5, 1.5, 1.0])
+        with f1:
+            s_vn = st.text_input("Filter Vietnamese:", placeholder="Nhập tên tiếng Việt...", label_visibility="collapsed")
+        with f2:
+            s_latin = st.text_input("Filter Latin / Compound:", placeholder="Nhập tên Latin hoặc hoạt chất...", label_visibility="collapsed")
+        with f3:
+            ck_mapped = st.checkbox("Only Triangulated", value=False)
 
-    df_view = df_cross.copy()
-    if s_vn:
-        df_view = df_view[df_view['TenVietNam'].str.contains(s_vn, case=False, na=False)]
-    if s_latin:
-        df_view = df_view[df_view['Binomial'].str.contains(s_latin, case=False, na=False) | 
-                          df_view['Primary_Compound'].str.contains(s_latin, case=False, na=False)]
-    if ck_mapped:
-        df_view = df_view[df_view['TCMSP_ID'].notna()]
+        df_view = df_cross.copy()
+        if s_vn:
+            df_view = df_view[df_view['TenVietNam'].str.contains(s_vn, case=False, na=False)]
+        if s_latin:
+            df_view = df_view[df_view['Binomial'].str.contains(s_latin, case=False, na=False) | 
+                              df_view['Primary_Compound'].str.contains(s_latin, case=False, na=False)]
+        if ck_mapped:
+            df_view = df_view[df_view['TCMSP_ID'].notna()]
 
-    st.dataframe(
-        df_view[['ID_ViThuoc', 'TenVietNam', 'Binomial', 'TCM_Chinese', 'TCMSP_ID', 'Primary_Compound', 'PubChem_CID', 'IMPPAT_ID']].rename(columns={
-            'ID_ViThuoc': 'ID', 'TenVietNam': 'Vietnamese', 'Binomial': 'Latin Binomial',
-            'TCM_Chinese': 'TCM Hanzi', 'TCMSP_ID': 'TCMSP', 'Primary_Compound': 'Compound', 'PubChem_CID': 'PubChem CID'
-        }),
-        use_container_width=True,
-        height=320
-    )
-    st.caption("Curation Audit: 81.22% (588/724) NCBI Taxonomy concordance; 13.54% (98/724) isolated PubChem CIDs; remainder under Valid_Missing_Ethnomedical.")
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.dataframe(
+            df_view[['ID_ViThuoc', 'TenVietNam', 'Binomial', 'TCM_Chinese', 'TCMSP_ID', 'Primary_Compound', 'PubChem_CID', 'IMPPAT_ID']].rename(columns={
+                'ID_ViThuoc': 'ID', 'TenVietNam': 'Tên Việt Nam', 'Binomial': 'Latin Binomial',
+                'TCM_Chinese': 'TCM Hanzi', 'TCMSP_ID': 'TCMSP', 'Primary_Compound': 'Hoạt chất', 'PubChem_CID': 'PubChem CID'
+            }),
+            use_container_width=True,
+            height=320
+        )
+        st.caption("Curation Audit: 81.22% (588/724) NCBI Taxonomy; 13.54% (98/724) PubChem CIDs; còn lại theo Valid_Missing_Ethnomedical.")
 
 # ==============================================================================
 # TAB 3: TDA BENCHMARK
 # ==============================================================================
 with tab_tda:
-    st.markdown('<div class="exec-panel">', unsafe_allow_html=True)
-    t_c1, t_c2 = st.columns([1.5, 1.0])
-    with t_c1:
-        st.markdown("<b>Table 1: Comparative Geometric Dimensionality Reduction (99.39% Sparsity)</b>", unsafe_allow_html=True)
-        st.dataframe(df_t1, use_container_width=True, height=260)
-    with t_c2:
-        st.markdown(f"""
-        <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:10px; font-size:0.78rem; line-height:1.6;">
-            <b>🔬 Persistent Simplicial Invariants</b><br>
-            • <b>H₀ Clusters:</b> 211 Persistent Features (Entropy: 0.9966)<br>
-            • <b>H₁ Synergy Loops:</b> 13 Invariant Cavities (Entropy: 0.9264)<br>
-            • <b>Filtration Interval:</b> Invariant over ε ∈ [0.80, 0.99]<br>
-            <hr style="margin:4px 0;">
-            <b>🌐 Bottleneck Alignment vs Canonical TCM</b><br>
-            • <b>d_B(H₁) = 0.0435:</b> Strictly conserved higher-order synergy loops<br>
-            • <b>d_B(H₀) = 0.2500:</b> Biogeographical tropical flora speciation<br>
-            <span style="color:#059669; font-weight:600;">Proves mathematical structural equivalence between VTM and canonical Asian pharmacopoeias.</span>
-        </div>
-        """, unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    with st.container(border=True):
+        t_c1, t_c2 = st.columns([1.5, 1.0])
+        with t_c1:
+            st.markdown("##### Table 1: Comparative Evaluation (99.39% Sparsity)")
+            st.dataframe(df_t1, use_container_width=True, height=270)
+        with t_c2:
+            st.markdown("##### 🔬 Invariants & Alignment")
+            st.markdown("""
+            * **H₀ Clusters:** **211 Persistent Features** (Entropy: **0.9966**)
+            * **H₁ Synergy Loops:** **13 Invariant Cavities** (Entropy: **0.9264**)
+            * **Filtration Interval:** Bền vững qua $\epsilon \in [0.80, 0.99]$
+            ***
+            * **Bottleneck vs TCM:**
+              - **$d_B(H_1) = 0.0435$:** Chu trình phối ngũ hiệp đồng được bảo toàn tuyệt đối
+              - **$d_B(H_0) = 0.2500$:** Phân kỳ kiểu hình do tính đa dạng thực vật nhiệt đới
+            """)
 
 # ==============================================================================
 # TAB 4: HGNN BENCHMARK
 # ==============================================================================
 with tab_hgnn:
-    st.markdown('<div class="exec-panel">', unsafe_allow_html=True)
-    h_c1, h_c2 = st.columns([1.3, 1.0])
-    with h_c1:
-        st.markdown("<b>Table 2: Link Prediction Benchmark (Hold-out Test Set N=106, 80/20 Edge Split)</b>", unsafe_allow_html=True)
-        st.dataframe(df_t2, use_container_width=True, height=140)
-    with h_c2:
-        st.markdown("""
-        <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-left:3px solid #16A34A; border-radius:6px; padding:10px; font-size:0.78rem; line-height:1.6;">
-            <b style="color:#16A34A;">Model Evaluation Summary</b><br>
-            • <b>Topological HGNN (Ours):</b> AUC-ROC = <b>1.0000</b> | AP = <b>1.0000</b><br>
-            • <b>Pairwise Baseline (GCN):</b> AUC-ROC = <b>0.8270</b> | AP = <b>0.8302</b><br>
-            • <b>Relative Gain:</b> <b>+17.30%</b> under 99.39% matrix sparsity.<br>
-            <div style="font-size:0.72rem; color:#475569; margin-top:4px;">Simplicial boundary operators prevent Laplacian oversmoothing over sparse bipartite structures.</div>
-        </div>
-        """, unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    with st.container(border=True):
+        h_c1, h_c2 = st.columns([1.3, 1.0])
+        with h_c1:
+            st.markdown("##### Table 2: Link Prediction (Test Set N=106, Edge Split 80/20)")
+            st.dataframe(df_t2, use_container_width=True, height=140)
+        with h_c2:
+            st.success("""
+            **Kết quả thực nghiệm nổi bật:**
+            • **Topological HGNN (Ours):** AUC-ROC = **1.0000** | AP = **1.0000**  
+            • **Pairwise Baseline (GCN):** AUC-ROC = **0.8270** | AP = **0.8302**  
+            • **Mức tăng hiệu năng:** **+17.30%** trên dữ liệu thưa 99.39%.
+            """)
+            st.info("Biểu diễn simplicial và các chu trình tô-pô ngăn chặn hoàn toàn hiện tượng oversmoothing của mô hình đồ thị cặp thông thường.")
