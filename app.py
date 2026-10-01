@@ -1,7 +1,6 @@
 """
 VTM-TDA Benchmark: Topological Data Orchestration for Indigenous Ethnomedicine
 Interactive Clinical Demonstration Platform (FAIR-Compliant AI Platform)
-
 """
 
 import streamlit as st
@@ -10,55 +9,79 @@ import numpy as np
 
 # Page configuration
 st.set_page_config(
-    page_title="VTM-TDA | Ethnomedical Data Orchestration",
+    page_title="VTM-TDA Explorer",
     page_icon="🌿",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
-# Custom Styling
+# Custom Styling for Single-Page Viewport
 st.markdown("""
 <style>
-    .main-header {
+    /* Compact global containers */
+    .block-container {
+        padding-top: 1rem !important;
+        padding-bottom: 0.5rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    
+    /* Compact Top Banner */
+    .compact-header {
         background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
-        padding: 24px;
-        border-radius: 12px;
-        color: white;
-        margin-bottom: 25px;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    }
-    .metric-card {
-        background-color: #F8FAFC;
-        border: 1px solid #E2E8F0;
+        padding: 10px 18px;
         border-radius: 8px;
-        padding: 16px;
-        margin-bottom: 12px;
-    }
-    .badge-case {
-        background-color: #0D9488;
         color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-weight: 600;
-        font-size: 0.85rem;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
+    
+    /* Scrollable Box Container */
+    .scroll-box {
+        max-height: 440px;
+        overflow-y: auto;
+        padding-right: 6px;
+    }
+    
+    /* Metric pill */
+    .metric-pill {
+        background-color: #F1F5F9;
+        border: 1px solid #CBD5E1;
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-bottom: 6px;
+    }
+    
+    /* Tab Styling */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
+        gap: 6px;
+        margin-bottom: 8px;
     }
     .stTabs [data-baseweb="tab"] {
-        padding: 10px 18px;
-        border-radius: 6px;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+    
+    /* Hide Streamlit padding on tables */
+    div[data-testid="stTable"] {
+        font-size: 0.85rem;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Main Banner
+# Compact Header Bar
 st.markdown("""
-<div class="main-header">
-    <h1 style="margin:0; font-size: 2.2rem; font-weight: 700;">🌿 VTM-TDA: Topological Data Orchestration Framework</h1>
-    <p style="margin: 8px 0 0 0; font-size: 1.05rem; opacity: 0.9;">
-        AI-Ready FAIR Benchmark and Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)
-    </p>
+<div class="compact-header">
+    <div>
+        <span style="font-size: 1.25rem; font-weight: 700;">🌿 VTM-TDA: Topological Data Orchestration Platform</span>
+        <span style="font-size: 0.85rem; opacity: 0.8; margin-left: 12px;">AI-Ready Ethnomedicine Benchmark (Prof. Do Tat Loi)</span>
+    </div>
+    <div style="font-size: 0.75rem; opacity: 0.85;">
+        724 Herbs | 1,635 Formulas | 99.39% Sparsity | d_B(H₁)=0.0435
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -79,117 +102,97 @@ except Exception as e:
     st.error(f"Error loading datasets from 'data/' directory: {e}. Please ensure data files are placed in 'data/' folder.")
     st.stop()
 
-# Sidebar: System Summary Metrics
-st.sidebar.header("📊 Benchmark Invariants")
-st.sidebar.metric(label="Master Botanical Taxa", value=f"{len(df_vi):,}")
-st.sidebar.metric(label="Curated Formulations", value=f"{len(df_bai):,}")
-st.sidebar.metric(label="Active Formulation Edges", value=f"{len(df_cong):,}")
-st.sidebar.metric(label="Incidence Matrix Sparsity", value="99.39%", delta="Submatrix 226×410", delta_color="normal")
-st.sidebar.metric(label="Persistent Clusters (H₀)", value="211", delta="Entropy: 0.9966")
-st.sidebar.metric(label="Synergy Loops (H₁)", value="13", delta="Entropy: 0.9264")
-st.sidebar.metric(label="Bottleneck Distance dB(H₁)", value="0.0435", delta="Conserved Loops (vs TCM)")
-st.sidebar.metric(label="Bottleneck Distance dB(H₀)", value="0.2500", delta="Tropical Speciation")
+# Sidebar: Secondary Invariants & Details
+with st.sidebar:
+    st.header("📊 Benchmark Invariants")
+    st.metric(label="Master Botanical Taxa", value=f"{len(df_vi):,}")
+    st.metric(label="Curated Formulations", value=f"{len(df_bai):,}")
+    st.metric(label="Active Links (Incidence)", value=f"{len(df_cong):,}")
+    st.metric(label="Matrix Sparsity", value="99.39%", delta="Submatrix 226×410")
+    st.metric(label="Persistent Clusters (H₀)", value="211", delta="Entropy: 0.9966")
+    st.metric(label="Synergy Loops (H₁)", value="13", delta="Entropy: 0.9264")
+    st.metric(label="Bottleneck dB(H₁)", value="0.0435", delta="Conserved vs TCM")
+    st.metric(label="Bottleneck dB(H₀)", value="0.2500", delta="Tropical Divergence")
+    st.caption("DOI: 10.5281/zenodo.23075404 | MIT License")
 
-st.sidebar.markdown("---")
-st.sidebar.caption("FAIR Provenance: Registered via Zenodo DOI: 10.5281/zenodo.23075404. Licensed under CC BY 4.0 & MIT Open Source.")
-
-# Tabs Navigation
+# Tabs Layout
 tab_cases, tab_browser, tab_tda, tab_hgnn = st.tabs([
-    "🌟 Featured Clinical Cases (Case Studies)",
-    "🔍 Multi-Tier Cross-Ontology Browser",
-    "📐 Topological Persistence vs Baselines",
-    "🧠 Hypergraph Link Prediction (HGNN)"
+    "🌟 Clinical Cases",
+    "🔍 Cross-Ontology Directory",
+    "📐 TDA vs Baselines",
+    "🧠 Link Prediction (HGNN)"
 ])
 
 # ==============================================================================
-# TAB 1: FEATURED CLINICAL CASES (SHOWCASE SIGNATURE HERBS & FORMULAS)
+# TAB 1: CLINICAL CASES (Compact Single-View)
 # ==============================================================================
 with tab_cases:
-    st.subheader("🌟 Featured Pharmacological Taxa: Canonical Synergy & Manifold Triangulation")
-    st.markdown("""
-    Explore signature ethnomedical taxa from Prof. Do Tat Loi's compendium that illustrate **cross-system ontological concordance**, 
-    **higher-order simplicial synergy ($H_1$ loops)**, and **validated biochemical target alignments**.
-    """)
+    col_sel, col_desc = st.columns([1.5, 3])
+    with col_sel:
+        case_options = {
+            "Case 1: Ích Mẫu (Leonurus heterophyllus)": 1,
+            "Case 2: Hương Phụ (Cyperus rotundus)": 2,
+            "Case 3: Diếp Cá (Houttuynia cordata)": 5,
+            "Case 4: Đương Quy (Angelica sinensis)": 17,
+            "Case 5: Hồng Hoa (Carthamus tinctorius)": 6,
+            "Case 6: Sinh Địa - Thục Địa (Rehmannia glutinosa)": 588
+        }
+        selected_case_name = st.selectbox("Select Signature Ethnomedical Taxon:", list(case_options.keys()))
+        selected_id = case_options[selected_case_name]
+        case_data = df_cross[df_cross['ID_ViThuoc'] == selected_id].iloc[0]
     
-    case_options = {
-        "Case 1: Ích Mẫu (Leonurus heterophyllus) - Gynecological Tri-Herb Cavity": 1,
-        "Case 2: Hương Phụ (Cyperus rotundus) - Liver Qi Stagnation Hub": 2,
-        "Case 3: Diếp Cá (Houttuynia cordata) - Tropical Respiratory Antiviral": 5,
-        "Case 4: Đương Quy (Angelica sinensis) - Pan-Asian Hematopoietic Benchmark": 17,
-        "Case 5: Hồng Hoa (Carthamus tinctorius) - Microvascular Stasis Remover": 6,
-        "Case 6: Sinh Địa - Thục Địa (Rehmannia glutinosa) - Multi-Tier Kidney Yin Tonic": 588
-    }
-    
-    selected_case_name = st.selectbox("Select a Curated Case Study to Inspect:", list(case_options.keys()))
-    selected_id = case_options[selected_case_name]
-    
-    case_data = df_cross[df_cross['ID_ViThuoc'] == selected_id].iloc[0]
-    
-    # Showcase Cards Layout
-    c1, c2, c3 = st.columns([1.2, 1.4, 1.4])
+    with col_desc:
+        st.markdown(f"**Canonical Synergy Profile:** `{case_data['TenVietNam']}` (*{case_data['Binomial']}*) — Triangulated across Western & Eastern repositories.")
+
+    c1, c2, c3 = st.columns([1.2, 1.3, 2.0])
     
     with c1:
-        st.markdown("#### 🌿 Botanical & Vernacular Identity")
-        st.write(f"**Vietnamese Name:** `{case_data['TenVietNam']}`")
-        st.write(f"**Binomial Nomenclature (Kew POWO):** *{case_data['Binomial']}*")
-        st.write(f"**Plant Family:** *{case_data.get('HoThucVat', 'N/A')}*")
-        st.write(f"**Folk Aliases:** {case_data.get('TenGoiKhac', 'None')}")
-        st.markdown(f"**POWO Record:** [Kew Royal Botanic Gardens Link]({case_data.get('POWO_Taxon_URL', 'https://powo.science.kew.org')})")
-        
+        st.markdown("""<div class="metric-pill">""", unsafe_allow_html=True)
+        st.markdown("**🌿 Botanical Identity**")
+        st.write(f"• **Family:** *{case_data.get('HoThucVat', 'N/A')}*")
+        st.write(f"• **Alias:** {case_data.get('TenGoiKhac', 'None')}")
+        st.write(f"• **POWO:** [Kew Record]({case_data.get('POWO_Taxon_URL', 'https://powo.science.kew.org')})")
+        st.markdown("""</div>""", unsafe_allow_html=True)
+
     with c2:
-        st.markdown("#### 🌐 Cross-Ontology Alignment")
-        st.write(f"**TCM Equivalent (Hanzi / Pinyin):** {case_data.get('TCM_Chinese', 'N/A')} ({case_data.get('TCM_Pinyin', 'N/A')})")
-        st.write(f"**TCMSP Database Identifier:** `{case_data.get('TCMSP_ID', 'N/A')}`")
-        st.write(f"**Ayurveda Equivalent (IMPPAT):** `{case_data.get('IMPPAT_ID', 'N/A')}`")
-        st.write(f"**Primary Bioactive Compound:** **{case_data.get('Primary_Compound', 'N/A')}**")
-        st.write(f"**PubChem CID:** `{int(case_data['PubChem_CID']) if pd.notna(case_data['PubChem_CID']) else 'N/A'}`")
-        
+        st.markdown("""<div class="metric-pill">""", unsafe_allow_html=True)
+        st.markdown("**🌐 Ontology & Chemistry**")
+        st.write(f"• **TCM:** {case_data.get('TCM_Chinese', 'N/A')} ({case_data.get('TCM_Pinyin', 'N/A')})")
+        st.write(f"• **TCMSP / IMPPAT:** `{case_data.get('TCMSP_ID', 'N/A')}` / `{case_data.get('IMPPAT_ID', 'N/A')}`")
+        st.write(f"• **Compound (CID):** {case_data.get('Primary_Compound', 'N/A')} (`{int(case_data['PubChem_CID']) if pd.notna(case_data['PubChem_CID']) else 'N/A'}`)")
+        st.markdown("""</div>""", unsafe_allow_html=True)
+
     with c3:
-        st.markdown("#### ⚡ Energetics & Meridian Tropism")
-        st.write(f"**Nature & Flavor (Tính Vị):** {case_data.get('TinhVi', 'N/A')}")
-        st.write(f"**Meridian Tropisms (Quy Kinh):** `{case_data.get('QuyKinh', 'N/A')}`")
-        st.write(f"**Clinical Dosage:** {case_data.get('LieuDung', 'N/A')}")
-        st.write(f"**Pharmacological Provenance:** `DDVN_V_Concordant`")
+        st.markdown("**📜 Associated Formulations (Master Hypergraph)**")
+        linked_presc_ids = df_cong[df_cong['ID_ViThuoc'] == selected_id]['ID_BaiThuoc'].unique()
         
-    st.markdown("---")
-    
-    # Associated Formulations for this featured herb
-    st.markdown(f"#### 📜 Clinical Formulations Involving **{case_data['TenVietNam']}** in the Master Hypergraph")
-    linked_presc_ids = df_cong[df_cong['ID_ViThuoc'] == selected_id]['ID_BaiThuoc'].unique()
-    
-    if len(linked_presc_ids) > 0:
-        matching_prescs = df_bai[df_bai['ID_BaiThuoc'].isin(linked_presc_ids)]
-        st.write(f"Found **{len(matching_prescs)}** validated formulations containing this taxon in the Do Tat Loi benchmark:")
-        
-        for _, p_row in matching_prescs.iterrows():
-            with st.expander(f"💊 Formula #{p_row['ID_BaiThuoc']}: {p_row['TenBaiThuoc']}"):
-                st.write(f"**Clinical Indications (Chủ trị):** {p_row['ChuTri']}")
-                st.write(f"**Pharmacopoeial Source:** {p_row['NguonGoc']}")
-                # Get co-occurring herbs in this formula
-                co_herbs = df_cong[df_cong['ID_BaiThuoc'] == p_row['ID_BaiThuoc']]
-                co_details = df_vi[df_vi['ID_ViThuoc'].isin(co_herbs['ID_ViThuoc'])]
-                st.markdown("**Formulation Herb Roster:** " + " + ".join([f"`{h}`" for h in co_details['TenVietNam'].tolist()]))
-    else:
-        st.info("Taxon serves as an individual ethnomedical therapeutic monograph.")
+        if len(linked_presc_ids) > 0:
+            matching_prescs = df_bai[df_bai['ID_BaiThuoc'].isin(linked_presc_ids)]
+            with st.container(height=260):
+                for _, p_row in matching_prescs.iterrows():
+                    co_herbs = df_cong[df_cong['ID_BaiThuoc'] == p_row['ID_BaiThuoc']]
+                    co_details = df_vi[df_vi['ID_ViThuoc'].isin(co_herbs['ID_ViThuoc'])]
+                    roster = " + ".join([f"`{h}`" for h in co_details['TenVietNam'].tolist()])
+                    
+                    st.markdown(f"**💊 Formula #{p_row['ID_BaiThuoc']}: {p_row['TenBaiThuoc']}**")
+                    st.caption(f"**Indication:** {p_row['ChuTri']} | **Source:** {p_row['NguonGoc']}")
+                    st.markdown(f"**Roster:** {roster}")
+                    st.divider()
+        else:
+            st.info("Monographic ethnomedical taxon without compound formulations.")
 
 # ==============================================================================
-# TAB 2: MULTI-TIER CROSS-ONTOLOGY BROWSER
+# TAB 2: CROSS-ONTOLOGY BROWSER (Direct Grid)
 # ==============================================================================
 with tab_browser:
-    st.subheader("🔍 Complete 724 Master Botanical Taxa & Ontology Directory")
-    st.markdown("""
-    Filter and query the harmonized database across Western, Chinese, and Indian biomedical ontologies.  
-    *Audited Curation Summary:* **81.22% (588 taxa)** aligned with NCBI Taxonomy; **13.54% (98 taxa)** mapped to PubChem CIDs for isolated secondary metabolites; remaining taxa tracked via `Valid_Missing_Ethnomedical`.
-    """)
-    
-    col_search1, col_search2, col_filter = st.columns([2, 2, 1.5])
-    with col_search1:
-        search_txt = st.text_input("Search by Vietnamese Name or Folk Alias:", placeholder="e.g., Ba Kich, Sam, Cam Thao...")
-    with col_search2:
-        search_sci = st.text_input("Search by Latin Binomial or Chemical Compound:", placeholder="e.g., Panax, Quercetin...")
-    with col_filter:
-        only_mapped = st.checkbox("Show Only Globally Triangulated Taxa (TCM / IMPPAT)", value=False)
-        
+    col_q1, col_q2, col_ck = st.columns([2, 2, 1.2])
+    with col_q1:
+        search_txt = st.text_input("Search Vietnamese Name / Alias:", placeholder="e.g., Ba Kich, Sam...", label_visibility="collapsed")
+    with col_q2:
+        search_sci = st.text_input("Search Latin Binomial / Compound:", placeholder="e.g., Panax, Quercetin...", label_visibility="collapsed")
+    with col_ck:
+        only_mapped = st.checkbox("Only Globally Mapped", value=False)
+
     filtered_df = df_cross.copy()
     if search_txt:
         filtered_df = filtered_df[filtered_df['TenVietNam'].str.contains(search_txt, case=False, na=False) | 
@@ -199,71 +202,56 @@ with tab_browser:
                                   filtered_df['Primary_Compound'].str.contains(search_sci, case=False, na=False)]
     if only_mapped:
         filtered_df = filtered_df[filtered_df['TCMSP_ID'].notna()]
-        
-    st.write(f"Displaying **{len(filtered_df)}** matching taxa:")
-    
+
     cols_to_show = ['ID_ViThuoc', 'TenVietNam', 'Binomial', 'TCM_Pinyin', 'TCM_Chinese', 'TCMSP_ID', 'Primary_Compound', 'PubChem_CID', 'IMPPAT_ID']
     st.dataframe(
         filtered_df[cols_to_show].rename(columns={
-            'ID_ViThuoc': 'ID',
-            'TenVietNam': 'Vietnamese Name',
-            'Binomial': 'Latin Binomial (POWO)',
-            'TCM_Pinyin': 'TCM Pinyin',
-            'TCM_Chinese': 'TCM Hanzi',
-            'TCMSP_ID': 'TCMSP ID',
-            'Primary_Compound': 'Primary Compound',
-            'PubChem_CID': 'PubChem CID',
-            'IMPPAT_ID': 'IMPPAT ID'
+            'ID_ViThuoc': 'ID', 'TenVietNam': 'Vietnamese Name', 'Binomial': 'Latin Binomial',
+            'TCM_Pinyin': 'Pinyin', 'TCM_Chinese': 'Hanzi', 'TCMSP_ID': 'TCMSP',
+            'Primary_Compound': 'Compound', 'PubChem_CID': 'PubChem CID', 'IMPPAT_ID': 'IMPPAT'
         }),
         use_container_width=True,
-        height=400
+        height=380
     )
+    st.caption("Curation Audit: 81.22% (588 taxa) matched NCBI Taxonomy; 13.54% (98 taxa) matched PubChem CIDs; remainder under Valid_Missing_Ethnomedical.")
 
 # ==============================================================================
-# TAB 3: TOPOLOGICAL PERSISTENCE VS CLASSICAL BASELINES
+# TAB 3: TDA VS BASELINES (Side-by-Side Comparison)
 # ==============================================================================
 with tab_tda:
-    st.subheader("📐 Resolving 99.39% Data Sparsity: Topological Invariants vs Baselines")
-    st.markdown("""
-    Under severe hypergraph sparsity (99.39%), conventional projection techniques (PCA, t-SNE) experience **catastrophic metric collapse** (PCA preserves only 8.55% variance). 
-    Vietoris–Rips persistent homology over the Jaccard metric space extracts 211 stable connected components ($H_0$) and 13 invariant higher-order synergy loops ($H_1$).
-    """)
+    col_tda_tbl, col_tda_info = st.columns([1.5, 1])
     
-    st.markdown("#### Table 1: Quantitative Comparative Evaluation Under Extreme Sparsity")
-    st.table(df_t1)
-    
-    col_tda1, col_tda2 = st.columns(2)
-    with col_tda1:
-        st.markdown("#### 🔬 Simplicial Homology Invariants")
+    with col_tda_tbl:
+        st.markdown("**Table 1: Comparative Evaluation Under 99.39% Sparsity**")
+        st.dataframe(df_t1, use_container_width=True, height=270)
+        
+    with col_tda_info:
+        st.markdown("**🔬 Simplicial Homology & Manifold Alignment**")
         st.markdown("""
-        * **H₀ Dimension (Connected Components):** **211 Persistent Clusters**  
-          *Normalized Persistence Entropy:* **0.9966** (governed by conserved modular meridian affinities).
-        * **H₁ Dimension (Synergy Cavities):** **13 Persistent Non-Bounding Loops**  
-          *Normalized Persistence Entropy:* **0.9264** (empirical proof of higher-order multi-herb rules).
-        * **Filtration Lifespan:** Stable across filtration regime $\epsilon \in [0.80, 0.99]$.
+        * **H₀ Connected Clusters:** **211 Persistent Features** (Entropy: **0.9966**)
+        * **H₁ Synergy Cavities:** **13 Non-Bounding Loops** (Entropy: **0.9264**)
+        * **Filtration Interval:** Invariant across $\epsilon \in [0.80, 0.99]$
+        * **Alignment vs TCM:**
+          - **$d_B(H_1) = 0.0435$**: Strictly conserved combinatorial synergy motifs
+          - **$d_B(H_0) = 0.2500$**: Biogeographical tropical flora speciation
         """)
-    with col_tda2:
-        st.markdown("#### 🌐 Cross-System Manifold Congruence (vs Canonical TCM)")
-        st.markdown("""
-        * **Higher-Order Conservation ($d_B(H_1)$):** **0.0435** (tight structural alignment confirming conserved combinatorial motifs).
-        * **Botanical Phenotypic Divergence ($d_B(H_0)$):** **0.2500** (reflects tropical biogeographical speciation of indigenous Southeast Asian flora).
-        * **Translational Consilience:** Proves indigenous VTM shares structural equivalence with East Asian pharmacopoeias while incorporating unique tropical taxa.
-        """)
+        st.caption("Vietoris–Rips filtrations preserve multi-body simplicial geometry where PCA loses 91.45% of variance.")
 
 # ==============================================================================
-# TAB 4: HYPERGRAPH LINK PREDICTION (HGNN)
+# TAB 4: HYPERGRAPH LINK PREDICTION (Clean Benchmark Card)
 # ==============================================================================
 with tab_hgnn:
-    st.subheader("🧠 Downstream Task: Herb-Herb Synergy Link Prediction")
-    st.markdown("""
-    Validation of the topological hypergraph representation on predicting synergistic co-occurrence links under a rigorous **non-leaky 80/20 train/test edge split** ($N=106$ hold-out test pairs: 53 positive and 53 balanced negative pairs).
-    """)
+    col_hgnn_tbl, col_hgnn_res = st.columns([1.3, 1])
     
-    st.markdown("#### Table 2: Benchmark Evaluation Performance on Hold-out Test Set")
-    st.table(df_t2)
-    
-    st.success("""
-    **Core Finding:** Our Topological Hypergraph Neural Network (HGNN) achieves an **AUC-ROC of 1.0000** and **Average Precision of 1.0000** on hold-out testing, 
-    outperforming standard pairwise Graph Convolutional Networks (GCN, AUC-ROC = 0.8270, AP = 0.8302) by **+17.30%**. Simplicial topology preserves 
-    higher-order non-bounding cycles, preventing the oversmoothing collapse suffered by pairwise graphs under 99.39% sparsity.
-    """)
+    with col_hgnn_tbl:
+        st.markdown("**Table 2: Downstream Evaluation (Hold-out Test Set N=106, 80/20 Non-Leaky Split)**")
+        st.dataframe(df_t2, use_container_width=True, height=140)
+        
+    with col_hgnn_res:
+        st.success("""
+        **Performance Summary:**
+        • **Topological HGNN (Ours):** AUC-ROC = **1.0000** | AP = **1.0000**  
+        • **Pairwise Baseline (GCN):** AUC-ROC = **0.8270** | AP = **0.8302**  
+        • **Relative Gain:** **+17.30%** over standard pairwise convolution.
+        """)
+        st.info("Simplicial boundary operators prevent Laplacian oversmoothing over sparse bipartite structures.")
