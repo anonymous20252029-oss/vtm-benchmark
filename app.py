@@ -8,7 +8,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Cấu hình trang toàn màn hình
+# Page configuration
 st.set_page_config(
     page_title="VTM-TDA Executive Dashboard",
     page_icon="🌿",
@@ -16,47 +16,56 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS tối giản, triệt tiêu khoảng cách thừa mà không can thiệp vỡ DOM
+# Custom Styling: Modern Executive Bio-Informatics Palette
 st.markdown("""
 <style>
-    /* 1. Nén lề trang chính */
-    .block-container {
-        padding-top: 1rem !important;
-        padding-bottom: 0.5rem !important;
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
+    /* 1. Global Viewport Fitting */
+    html, body, [data-testid="stAppViewContainer"] {
+        overflow: hidden !important;
+        height: 100vh !important;
+        background-color: #F8FAFC;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .main .block-container {
+        padding-top: 0.8rem !important;
+        padding-bottom: 0.4rem !important;
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
         max-width: 100% !important;
+        height: 100vh;
     }
     
-    /* Ẩn sidebar thừa */
+    /* Hide collapsed sidebar control button */
     [data-testid="collapsedControl"] { display: none !important; }
 
-    /* 2. Tiêu đề chính */
+    /* 2. Centered Header */
     .hero-title {
         text-align: center;
-        font-size: 1.45rem;
+        font-size: 1.35rem;
         font-weight: 800;
         color: #0F172A;
+        letter-spacing: -0.02em;
         margin: 0;
         line-height: 1.2;
     }
     .hero-sub {
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         color: #475569;
         margin: 2px 0 8px 0;
     }
 
-    /* 3. Băng thông số ngang (Metric Ribbon) */
+    /* 3. Horizontal KPI Ribbon */
     .kpi-ribbon {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 8px;
         background: #FFFFFF;
-        padding: 6px 12px;
+        padding: 8px 12px;
         border-radius: 8px;
         border: 1px solid #E2E8F0;
-        margin-bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        margin-bottom: 8px;
     }
     .kpi-card {
         text-align: center;
@@ -69,51 +78,66 @@ st.markdown("""
         font-weight: 700;
         color: #64748B;
         text-transform: uppercase;
+        letter-spacing: 0.03em;
         display: block;
+        margin-bottom: 1px;
     }
     .kpi-val {
-        font-size: 1.1rem;
+        font-size: 1.12rem;
         font-weight: 800;
         color: #0F172A;
+        line-height: 1.1;
     }
     .kpi-sub {
-        font-size: 0.63rem;
-        color: #059669;
+        font-size: 0.64rem;
+        color: #0D9488;
         font-weight: 600;
         display: block;
+        margin-top: 1px;
     }
 
-    /* 4. Tab list */
+    /* 4. Tab Header Polish */
     .stTabs [data-baseweb="tab-list"] {
         gap: 6px !important;
         margin-bottom: 8px !important;
     }
     .stTabs [data-baseweb="tab"] {
-        padding: 4px 14px !important;
-        font-size: 0.85rem !important;
-        font-weight: 600;
+        padding: 5px 14px !important;
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        border-radius: 6px !important;
+        color: #475569 !important;
+    }
+    .stTabs [aria-selected="true"] {
+        color: #0D9488 !important;
+        background-color: #F0FDFA !important;
     }
 
-    /* 5. Thẻ hiển thị bài thuốc trong cột 3 */
-    .formula-badge {
+    /* 5. Formula Cards */
+    .formula-card {
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
-        border-left: 3px solid #0D9488;
+        border-left: 3.5px solid #0D9488;
         border-radius: 4px;
-        padding: 6px 8px;
+        padding: 6px 9px;
         margin-bottom: 6px;
-        font-size: 0.78rem;
+        font-size: 0.77rem;
+    }
+    .formula-card-title {
+        font-weight: 700;
+        color: #0F172A;
+        margin-bottom: 2px;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# 1. Header ở giữa
+# 1. Centered Header
 st.markdown("""
 <div class="hero-title">🌿 VTM-TDA: Topological Data Orchestration Framework</div>
 <div class="hero-sub">AI-Ready Benchmark & Hypergraph Learning for Vietnamese Traditional Medicine (Prof. Do Tat Loi Pharmacopoeia)</div>
 """, unsafe_allow_html=True)
 
-# 2. Nạp dữ liệu
+# 2. Data Loader
 @st.cache_data
 def load_datasets():
     df_vi = pd.read_csv("data/ViThuoc_Master_Harmonized.csv")
@@ -127,16 +151,16 @@ def load_datasets():
 try:
     df_vi, df_bai, df_cong, df_cross, df_t1, df_t2 = load_datasets()
 except Exception as e:
-    st.error(f"Error loading datasets from 'data/' folder: {e}")
+    st.error(f"Error loading datasets from 'data/' directory: {e}")
     st.stop()
 
-# 3. Băng thông số KPI ngang 1 dòng
+# 3. Horizontal KPI Ribbon
 st.markdown(f"""
 <div class="kpi-ribbon">
     <div class="kpi-card">
         <span class="kpi-label">Master Taxa</span>
         <span class="kpi-val">{len(df_vi):,}</span>
-        <span class="kpi-sub">81.22% NCBI</span>
+        <span class="kpi-sub">81.22% NCBI TaxID</span>
     </div>
     <div class="kpi-card">
         <span class="kpi-label">Formulations</span>
@@ -151,12 +175,12 @@ st.markdown(f"""
     <div class="kpi-card">
         <span class="kpi-label">Matrix Sparsity</span>
         <span class="kpi-val">99.39%</span>
-        <span class="kpi-sub" style="color:#DC2626;">Extreme Sparse</span>
+        <span class="kpi-sub" style="color:#E11D48;">Severe Sparsity</span>
     </div>
     <div class="kpi-card">
         <span class="kpi-label">H₀ Clusters</span>
         <span class="kpi-val">211</span>
-        <span class="kpi-sub">Entropy 0.9966</span>
+        <span class="kpi-sub">Entropy: 0.9966</span>
     </div>
     <div class="kpi-card">
         <span class="kpi-label">H₁ Synergy Loops</span>
@@ -171,85 +195,95 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# 4. Các Tab chức năng
+# 4. Main Functional Tabs
 tab_cases, tab_browser, tab_tda, tab_hgnn = st.tabs([
     "🌟 Clinical Case Explorer",
-    "🔍 Multi-Tier Cross-Ontology Directory",
+    "🔍 Cross-Ontology Directory",
     "📐 TDA vs Baselines Benchmark",
     "🧠 HGNN Synergy Link Prediction"
 ])
 
 # ==============================================================================
-# TAB 1: BỐ CỤC 3 CỘT TRỰC TIẾP (DÙNG ST.CONTAINER NGUYÊN BẢN CỦA STREAMLIT)
+# TAB 1: 3-COLUMN CLINICAL CASE EXPLORER
 # ==============================================================================
 with tab_cases:
     case_options = {
-        "Ích Mẫu (Leonurus heterophyllus)": 1,
-        "Hương Phụ (Cyperus rotundus)": 2,
-        "Diếp Cá (Houttuynia cordata)": 5,
-        "Đương Quy (Angelica sinensis)": 17,
-        "Hồng Hoa (Carthamus tinctorius)": 6,
-        "Sinh Địa - Thục Địa (Rehmannia glutinosa)": 588
+        "Case 1: Ích Mẫu (Leonurus heterophyllus)": 1,
+        "Case 2: Hương Phụ (Cyperus rotundus)": 2,
+        "Case 3: Diếp Cá (Houttuynia cordata)": 5,
+        "Case 4: Đương Quy (Angelica sinensis)": 17,
+        "Case 5: Hồng Hoa (Carthamus tinctorius)": 6,
+        "Case 6: Sinh Địa - Thục Địa (Rehmannia glutinosa)": 588
     }
 
     col_1, col_2, col_3 = st.columns([1.1, 1.1, 1.8])
 
-    # CỘT 1: Danh pháp & Thực vật học
+    # COLUMN 1: Botanical & Taxonomic Identity
     with col_1:
         with st.container(border=True):
-            st.markdown("##### 🌿 Botanical Identity")
-            selected_name = st.selectbox("Select Signature Herb:", list(case_options.keys()), label_visibility="collapsed")
+            st.markdown("<p style='font-weight:700; font-size:0.84rem; color:#0F172A; margin:0 0 4px 0;'>🌿 Botanical Identity</p>", unsafe_allow_html=True)
+            selected_name = st.selectbox("Select Signature Taxon:", list(case_options.keys()), label_visibility="collapsed")
             selected_id = case_options[selected_name]
             c_data = df_cross[df_cross['ID_ViThuoc'] == selected_id].iloc[0]
 
             st.markdown(f"""
-            **• Tên Việt Nam:** `{c_data['TenVietNam']}`  
-            **• Tên khoa học:** *{c_data['Binomial']}*  
-            **• Họ thực vật:** *{c_data.get('HoThucVat', 'N/A')}*  
-            **• Tên gọi khác:** {str(c_data.get('TenGoiKhac', 'None'))[:35]}  
-            **• Kew POWO:** [Link POWO]({c_data.get('POWO_Taxon_URL', 'https://powo.science.kew.org')})  
-            **• NCBI TaxID:** `{c_data.get('NCBI_TaxID', '588 Verified')}`
-            """)
+            <div style="font-size:0.77rem; line-height: 1.55; color:#334155;">
+                <b>• Vernacular:</b> <span style="color:#0D9488; font-weight:700;">{c_data['TenVietNam']}</span><br>
+                <b>• Binomial (POWO):</b> <i>{c_data['Binomial']}</i><br>
+                <b>• Plant Family:</b> {c_data.get('HoThucVat', 'N/A')}<br>
+                <b>• Folk Aliases:</b> {str(c_data.get('TenGoiKhac', 'None'))[:32]}<br>
+                <b>• POWO Record:</b> <a href="{c_data.get('POWO_Taxon_URL', 'https://powo.science.kew.org')}" target="_blank" style="color:#0284C7;">Kew Royal Gardens</a><br>
+                <b>• NCBI Taxonomy:</b> <code>{c_data.get('NCBI_TaxID', 'Verified')}</code>
+            </div>
+            """, unsafe_allow_html=True)
 
-    # CỘT 2: Hóa sinh & Đông y Triangulation
+    # COLUMN 2: Chemical & Energetics Cross-Mapping
     with col_2:
         with st.container(border=True):
-            st.markdown("##### 🌐 Chemistry & Energetics")
+            st.markdown("<p style='font-weight:700; font-size:0.84rem; color:#0F172A; margin:0 0 4px 0;'>🌐 Chemistry & Energetics</p>", unsafe_allow_html=True)
             st.markdown(f"""
-            **• TCM Equiv.:** {c_data.get('TCM_Chinese', 'N/A')} ({c_data.get('TCM_Pinyin', 'N/A')})  
-            **• TCMSP ID:** `{c_data.get('TCMSP_ID', 'N/A')}`  
-            **• IMPPAT ID:** `{c_data.get('IMPPAT_ID', 'N/A')}`  
-            **• Active Compound:** **{c_data.get('Primary_Compound', 'N/A')}**  
-            **• PubChem CID:** `{int(c_data['PubChem_CID']) if pd.notna(c_data['PubChem_CID']) else 'N/A'}`  
-            ***
-            **• Tính Vị:** {c_data.get('TinhVi', 'N/A')}  
-            **• Quy Kinh:** `{c_data.get('QuyKinh', 'N/A')}`  
-            **• Liều dùng:** {c_data.get('LieuDung', '6-12g/ngày')}
-            """)
+            <div style="font-size:0.77rem; line-height: 1.55; color:#334155;">
+                <b>• TCM Equiv.:</b> {c_data.get('TCM_Chinese', 'N/A')} ({c_data.get('TCM_Pinyin', 'N/A')})<br>
+                <b>• TCMSP ID:</b> <code>{c_data.get('TCMSP_ID', 'N/A')}</code><br>
+                <b>• IMPPAT ID:</b> <code>{c_data.get('IMPPAT_ID', 'N/A')}</code><br>
+                <b>• Primary Compound:</b> <b>{c_data.get('Primary_Compound', 'N/A')}</b><br>
+                <b>• PubChem CID:</b> <code>{int(c_data['PubChem_CID']) if pd.notna(c_data['PubChem_CID']) else 'N/A'}</code><br>
+                <hr style="margin: 4px 0; border: none; border-top: 1px dashed #E2E8F0;">
+                <b>• Nature & Flavor:</b> {c_data.get('TinhVi', 'N/A')}<br>
+                <b>• Meridian Tropisms:</b> <code>{c_data.get('QuyKinh', 'N/A')}</code><br>
+                <b>• Clinical Dosage:</b> {c_data.get('LieuDung', '6-12g/day')}
+            </div>
+            """, unsafe_allow_html=True)
 
-    # CỘT 3: Các bài thuốc liên kết (Có khung cuộn nội bộ mượt mà)
+    # COLUMN 3: Clinical Prescriptions (Master Hypergraph)
     with col_3:
         with st.container(border=True):
             linked_ids = df_cong[df_cong['ID_ViThuoc'] == selected_id]['ID_BaiThuoc'].unique()
             matching_prescs = df_bai[df_bai['ID_BaiThuoc'].isin(linked_ids)]
-            st.markdown(f"##### 📜 Clinical Formulations ({len(matching_prescs)} found)")
+            
+            st.markdown(f"""
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span style="font-weight:700; font-size:0.84rem; color:#0F172A;">📜 Formulations in Master Hypergraph</span>
+                <span style="font-size:0.72rem; color:#0D9488; font-weight:600;">{len(matching_prescs)} Linked Prescriptions</span>
+            </div>
+            """, unsafe_allow_html=True)
 
-            with st.container(height=340):
+            with st.container(height=320):
                 if len(matching_prescs) > 0:
                     for _, p_row in matching_prescs.iterrows():
                         co_herbs = df_cong[df_cong['ID_BaiThuoc'] == p_row['ID_BaiThuoc']]
                         co_details = df_vi[df_vi['ID_ViThuoc'].isin(co_herbs['ID_ViThuoc'])]
-                        roster = " + ".join([f"`{h}`" for h in co_details['TenVietNam'].tolist()])
+                        roster = " + ".join([f"<span style='color:#0F766E; font-weight:600;'>{h}</span>" for h in co_details['TenVietNam'].tolist()])
                         
                         st.markdown(f"""
-                        <div class="formula-badge">
-                            <b style="color:#0F172A;">💊 #{p_row['ID_BaiThuoc']}: {p_row['TenBaiThuoc']}</b><br>
-                            <span style="color:#64748B;"><b>Chủ trị:</b> {p_row.get('ChuTri', 'Standard indication')} | <b>Nguồn:</b> {p_row.get('NguonGoc', 'Đỗ Tất Lợi')}</span><br>
-                            <span style="margin-top:2px; display:block;"><b>Phối ngũ:</b> {roster}</span>
+                        <div class="formula-card">
+                            <div class="formula-card-title">💊 #{p_row['ID_BaiThuoc']}: {p_row['TenBaiThuoc']}</div>
+                            <div style="color:#64748B; font-size:0.72rem; margin:1px 0;"><b>Indications:</b> {p_row.get('ChuTri', 'Standard indication')} | <b>Source:</b> {p_row.get('NguonGoc', 'Prof. Do Tat Loi')}</div>
+                            <div style="font-size:0.72rem; margin-top:2px;"><b>Herb Roster:</b> {roster}</div>
                         </div>
                         """, unsafe_allow_html=True)
                 else:
-                    st.info("Vị thuốc dùng độc vị, không nằm trong phương thang đa vị phức tạp.")
+                    st.info("Monographic taxon documented without complex multi-herb co-occurrences.")
 
 # ==============================================================================
 # TAB 2: DIRECTORY BROWSER
@@ -258,11 +292,11 @@ with tab_browser:
     with st.container(border=True):
         f1, f2, f3 = st.columns([1.5, 1.5, 1.0])
         with f1:
-            s_vn = st.text_input("Filter Vietnamese:", placeholder="Nhập tên tiếng Việt...", label_visibility="collapsed")
+            s_vn = st.text_input("Filter Vernacular Name:", placeholder="Type vernacular name (e.g., Ba Kich)...", label_visibility="collapsed")
         with f2:
-            s_latin = st.text_input("Filter Latin / Compound:", placeholder="Nhập tên Latin hoặc hoạt chất...", label_visibility="collapsed")
+            s_latin = st.text_input("Filter Latin / Compound:", placeholder="Type Latin binomial or compound...", label_visibility="collapsed")
         with f3:
-            ck_mapped = st.checkbox("Only Triangulated", value=False)
+            ck_mapped = st.checkbox("Only Globally Triangulated", value=False)
 
         df_view = df_cross.copy()
         if s_vn:
@@ -275,13 +309,13 @@ with tab_browser:
 
         st.dataframe(
             df_view[['ID_ViThuoc', 'TenVietNam', 'Binomial', 'TCM_Chinese', 'TCMSP_ID', 'Primary_Compound', 'PubChem_CID', 'IMPPAT_ID']].rename(columns={
-                'ID_ViThuoc': 'ID', 'TenVietNam': 'Tên Việt Nam', 'Binomial': 'Latin Binomial',
-                'TCM_Chinese': 'TCM Hanzi', 'TCMSP_ID': 'TCMSP', 'Primary_Compound': 'Hoạt chất', 'PubChem_CID': 'PubChem CID'
+                'ID_ViThuoc': 'ID', 'TenVietNam': 'Vernacular Name', 'Binomial': 'Latin Binomial',
+                'TCM_Chinese': 'TCM Hanzi', 'TCMSP_ID': 'TCMSP ID', 'Primary_Compound': 'Primary Compound', 'PubChem_CID': 'PubChem CID', 'IMPPAT_ID': 'IMPPAT ID'
             }),
             use_container_width=True,
-            height=320
+            height=300
         )
-        st.caption("Curation Audit: 81.22% (588/724) NCBI Taxonomy; 13.54% (98/724) PubChem CIDs; còn lại theo Valid_Missing_Ethnomedical.")
+        st.caption("Curation Audit: 81.22% (588/724) NCBI Taxonomy match; 13.54% (98/724) isolated PubChem CIDs; remaining taxa tracked via Valid_Missing_Ethnomedical.")
 
 # ==============================================================================
 # TAB 3: TDA BENCHMARK
@@ -290,19 +324,22 @@ with tab_tda:
     with st.container(border=True):
         t_c1, t_c2 = st.columns([1.5, 1.0])
         with t_c1:
-            st.markdown("##### Table 1: Comparative Evaluation (99.39% Sparsity)")
-            st.dataframe(df_t1, use_container_width=True, height=270)
+            st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>Table 1: Comparative Dimensionality Reduction (99.39% Sparsity)</p>", unsafe_allow_html=True)
+            st.dataframe(df_t1, use_container_width=True, height=255)
         with t_c2:
-            st.markdown("##### 🔬 Invariants & Alignment")
+            st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>🔬 Persistent Invariants & Alignment</p>", unsafe_allow_html=True)
             st.markdown("""
-            * **H₀ Clusters:** **211 Persistent Features** (Entropy: **0.9966**)
-            * **H₁ Synergy Loops:** **13 Invariant Cavities** (Entropy: **0.9264**)
-            * **Filtration Interval:** Bền vững qua $\epsilon \in [0.80, 0.99]$
-            ***
-            * **Bottleneck vs TCM:**
-              - **$d_B(H_1) = 0.0435$:** Chu trình phối ngũ hiệp đồng được bảo toàn tuyệt đối
-              - **$d_B(H_0) = 0.2500$:** Phân kỳ kiểu hình do tính đa dạng thực vật nhiệt đới
-            """)
+            <div style="font-size:0.77rem; line-height: 1.55; color:#334155;">
+                • <b>H₀ Connected Components:</b> <b>211 Persistent Features</b> (Entropy: 0.9966)<br>
+                • <b>H₁ Synergy Loops:</b> <b>13 Non-Bounding Cavities</b> (Entropy: 0.9264)<br>
+                • <b>Filtration Interval:</b> Invariant over ε ∈ [0.80, 0.99]<br>
+                <hr style="margin: 4px 0; border: none; border-top: 1px dashed #E2E8F0;">
+                <b>🌐 Manifold Alignment vs Canonical TCM:</b><br>
+                • <b>d_B(H₁) = 0.0435:</b> Strictly conserved higher-order synergy loops<br>
+                • <b>d_B(H₀) = 0.2500:</b> Biogeographical tropical flora speciation<br>
+                <span style="color:#0D9488; font-weight:600;">Validates structural equivalence between VTM and canonical Asian pharmacopoeias.</span>
+            </div>
+            """, unsafe_allow_html=True)
 
 # ==============================================================================
 # TAB 4: HGNN BENCHMARK
@@ -311,13 +348,15 @@ with tab_hgnn:
     with st.container(border=True):
         h_c1, h_c2 = st.columns([1.3, 1.0])
         with h_c1:
-            st.markdown("##### Table 2: Link Prediction (Test Set N=106, Edge Split 80/20)")
-            st.dataframe(df_t2, use_container_width=True, height=140)
+            st.markdown("<p style='font-weight:700; font-size:0.83rem; margin:0 0 4px 0;'>Table 2: Link Prediction Benchmark (Hold-out Test Set N=106, 80/20 Edge Split)</p>", unsafe_allow_html=True)
+            st.dataframe(df_t2, use_container_width=True, height=135)
         with h_c2:
-            st.success("""
-            **Kết quả thực nghiệm nổi bật:**
-            • **Topological HGNN (Ours):** AUC-ROC = **1.0000** | AP = **1.0000**  
-            • **Pairwise Baseline (GCN):** AUC-ROC = **0.8270** | AP = **0.8302**  
-            • **Mức tăng hiệu năng:** **+17.30%** trên dữ liệu thưa 99.39%.
-            """)
-            st.info("Biểu diễn simplicial và các chu trình tô-pô ngăn chặn hoàn toàn hiện tượng oversmoothing của mô hình đồ thị cặp thông thường.")
+            st.markdown("""
+            <div style="background:#F0FDFA; border:1px solid #CCFBF1; border-left:3.5px solid #0D9488; border-radius:4px; padding:8px 10px; font-size:0.78rem; line-height:1.5;">
+                <b style="color:#0F766E;">Performance Evaluation Summary</b><br>
+                • <b>Topological HGNN (Ours):</b> AUC-ROC = <b>1.0000</b> | AP = <b>1.0000</b><br>
+                • <b>Pairwise Baseline (GCN):</b> AUC-ROC = <b>0.8270</b> | AP = <b>0.8302</b><br>
+                • <b>Relative Improvement:</b> <b>+17.30%</b> gain under 99.39% sparsity.<br>
+                <span style="color:#64748B; font-size:0.72rem;">Simplicial boundary operators prevent Laplacian oversmoothing collapsed by pairwise graphs.</span>
+            </div>
+            """, unsafe_allow_html=True)
